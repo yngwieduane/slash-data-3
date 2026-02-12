@@ -69,8 +69,8 @@ export function Home() {
     return (
         <>
             <SEO
-                title="UAE Digital Governance & Gov Interoperability Ecosystem | SlashData"
-                description="Powering a unified UAE digital ecosystem for governance and interoperability, connecting government and private sector systems through secure, scalable integration."
+                title="SlashData | National Digital Ecosystems & Real-Time Data Platforms"
+                description="SlashData builds national-scale digital ecosystems connecting industries through real-time interoperability , secure data exchange, and AI-enabled services."
             />
             <Hero4 onNavigateToSolutions={() => navigate('/solutions')} />
 
