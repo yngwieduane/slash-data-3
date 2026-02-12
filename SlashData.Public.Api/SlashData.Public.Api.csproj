@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <SpaRoot>..\slashdata-public-site\</SpaRoot>
+    <SpaBuildDir>$(SpaRoot)build\</SpaBuildDir>
+  </PropertyGroup>
+
+  <Target Name="CopySpaBuild" AfterTargets="Build;Publish">
+    <ItemGroup Condition="Exists('$(SpaBuildDir)index.html')">
+      <SpaFiles Include="$(SpaBuildDir)**\*.*" />
+    </ItemGroup>
+
+    <Copy
+      SourceFiles="@(SpaFiles)"
+      DestinationFiles="@(SpaFiles->'wwwroot\%(RecursiveDir)%(Filename)%(Extension)')"
+      SkipUnchangedFiles="true"
+      Condition="@(SpaFiles) != ''" />
+  </Target>
+
+</Project>
