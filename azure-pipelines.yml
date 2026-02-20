@@ -1,0 +1,81 @@
+trigger:
+- develop
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+variables:
+  buildConfiguration: 'Release'
+  apiProject: 'SlashData.Public.Api/SlashData.Public.Api.csproj'
+  frontendDir: 'slashdata-public-site'
+  appsettingsPath: 'SlashData.Public.Api/appsettings.json'
+
+steps:
+- checkout: self
+  clean: true
+
+- task: NodeTool@0
+  inputs:
+    versionSpec: '20.x'
+  displayName: 'Use Node.js 20'
+
+- script: |
+    cd $(frontendDir)
+    npm ci
+    npm run build
+  displayName: 'Build frontend'
+
+- script: |
+    rm -rf SlashData.Public.Api/wwwroot
+    mkdir -p SlashData.Public.Api/wwwroot
+    rsync -a --delete slashdata-public-site/build/ SlashData.Public.Api/wwwroot/
+  displayName: 'Sync frontend build to API wwwroot'
+
+- task: UseDotNet@2
+  inputs:
+    packageType: 'sdk'
+    version: '10.0.x'
+  displayName: 'Use .NET SDK 10'
+
+# --- TRANSFORM: update appsettings.json with pipeline secrets ---
+- script: |
+    python3 - <<'PY'
+    import json, os
+
+    path = os.environ["APPSETTINGS_PATH"]
+    recaptcha = os.environ.get("Recaptcha__SecretKey", "")
+    email_key = os.environ.get("Settings__Email__ApiKey", "")
+
+    with open(path, "r", encoding="utf-8") as f:
+      data = json.load(f)
+
+    data.setdefault("Recaptcha", {})
+    data["Recaptcha"]["SecretKey"] = recaptcha
+
+    data.setdefault("Settings", {})
+    data["Settings"].setdefault("Email", {})
+    data["Settings"]["Email"]["ApiKey"] = email_key
+
+    with open(path, "w", encoding="utf-8") as f:
+      json.dump(data, f, ensure_ascii=False, indent=2)
+
+    print(f"Updated {path} (values not printed).")
+    PY
+  displayName: 'Transform config: update appsettings.json'
+  env:
+    APPSETTINGS_PATH: $(appsettingsPath)
+    Recaptcha__SecretKey: $(Recaptcha__SecretKey)
+    Settings__Email__ApiKey: $(Settings__Email__ApiKey)
+
+- script: |
+    dotnet restore $(apiProject)
+    dotnet publish $(apiProject) -c $(buildConfiguration) -o $(Build.ArtifactStagingDirectory)/app
+  displayName: 'Publish API (includes frontend build)'
+
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)/app'
+    ArtifactName: 'app'
+    publishLocation: 'Container'
+  displayName: 'Publish artifact'
