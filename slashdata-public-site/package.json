@@ -1,0 +1,27 @@
+{
+      "name": "slashdatawebsite",
+      "version": "0.1.0",
+      "private": true,
+      "dependencies": {
+            "clsx": "*",
+            "framer-motion": "^11.0.0",
+            "lucide-react": "^0.487.0",
+            "react": "^18.3.1",
+            "react-dom": "^18.3.1",
+            "react-google-recaptcha-v3": "*",
+            "react-helmet-async": "^2.0.5",
+            "react-router-dom": "^7.13.0",
+            "tailwind-merge": "*"
+      },
+      "devDependencies": {
+            "@types/node": "^20.10.0",
+            "@types/react": "^19.2.10",
+            "@types/react-dom": "^19.2.3",
+            "@vitejs/plugin-react-swc": "^3.10.2",
+            "vite": "6.3.5"
+      },
+      "scripts": {
+            "dev": "vite",
+            "build": "vite build"
+      }
+}
