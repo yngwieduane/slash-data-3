@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { ChevronLeft, ChevronRight, Network, Building2, Car, CreditCard, ArrowRight, FileText, Shield } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 interface SolutionsCarouselProps {
   onNavigateToWtheeq?: () => void;
@@ -11,35 +12,36 @@ interface SolutionsCarouselProps {
 
 export function SolutionsCarousel({ onNavigateToWtheeq, onNavigateToRabetDetail, onNavigateToRhoonDetail, onNavigateToSharyDetail, onNavigateToWtheeqDetail }: SolutionsCarouselProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const { t } = useTranslation();
 
   const solutions = [
     {
       id: 'rabet',
-      name: 'Rabet',
-      description: 'Rabet enables secure, real-time interoperability for health insurance policy data—ingesting, validating, and reconciling information between insurance providers and ICP (Identity, Citizenship, Customs & Port Security) to ensure accurate, compliant exchanges.',
+      name: t('solutions.rabet.name'),
+      description: t('solutions.rabet.description'),
       icon: Shield,
       gradient: 'from-[#00c7c5] to-[#00a09e]'
     },
     {
       id: 'rhoon',
-      name: 'Rhoon',
-      description: 'Rhoon is an end-to-end secure gateway that streamlines vehicle mortgage data submission—coordinating controlled ingestion, validation, and regulatory alignment from 200+ banks and financial institutions into the Federal Traffic & Licensing System.',
+      name: t('solutions.rhoon.name'),
+      description: t('solutions.rhoon.description'),
       icon: Car,
       gradient: 'from-[#00c7c5] to-[#00a09e]',
       hasDetailPage: true
     },
     {
       id: 'wtheeq',
-      name: 'Wtheeq',
-      description: 'Wtheeq powers real-time integration between motor insurance policy systems and the Federal Traffic & Licensing System, enabling automated policy submission, validation, and faster processing through reliable data exchange.',
+      name: t('solutions.wtheeq.name'),
+      description: t('solutions.wtheeq.description'),
       icon: FileText,
       gradient: 'from-[#00c7c5] to-[#00a09e]',
       hasDetailPage: true
     },
     {
       id: 'shary',
-      name: 'Shary',
-      description: 'Shary delivers end-to-end vehicle ownership transfers powered by a secure escrow account—protecting funds from start to finish and releasing payment only after verified handover, backed by full transparency and auditable records.',
+      name: t('solutions.shary.name'),
+      description: t('solutions.shary.description'),
       icon: CreditCard,
       gradient: 'from-[#00c7c5] to-[#00a09e]'
     }
@@ -80,10 +82,10 @@ export function SolutionsCarousel({ onNavigateToWtheeq, onNavigateToRabetDetail,
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <p className="text-[#00c7c5] text-sm mb-4 uppercase tracking-widest">OUR SOLUTIONS</p>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl text-[#ffffff] mb-6">What We Offer</h2>
+          <p className="text-[#00c7c5] text-sm mb-4 uppercase tracking-widest">{t('solutions.badge')}</p>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl text-[#ffffff] mb-6">{t('solutions.title')}</h2>
           <p className="text-xl text-[#ffffff]/70 max-w-3xl mx-auto">
-            Delivering cutting-edge digital solutions that transform how government and businesses operate
+            {t('solutions.subtitle')}
           </p>
         </div>
 
@@ -110,7 +112,7 @@ export function SolutionsCarousel({ onNavigateToWtheeq, onNavigateToRabetDetail,
               const Icon = solution.icon;
               return (
                 <div
-                  key={`${solution.title}-${index}`}
+                  key={`${solution.id}-${index}`}
                   onClick={() => {
                     if (solution.id === 'wtheeq' && onNavigateToWtheeqDetail) {
                       onNavigateToWtheeqDetail();
@@ -155,7 +157,7 @@ export function SolutionsCarousel({ onNavigateToWtheeq, onNavigateToRabetDetail,
                         }
                       }}
                     >
-                      Learn More
+                      {t('solutions.learnMore')}
                     </button>
                   </div>
                 </div>
@@ -170,8 +172,8 @@ export function SolutionsCarousel({ onNavigateToWtheeq, onNavigateToRabetDetail,
                 key={index}
                 onClick={() => setCurrentIndex(index)}
                 className={`w-2 h-2 rounded-full transition-all cursor-pointer ${index === currentIndex
-                    ? 'bg-[#00c7c5] w-8'
-                    : 'bg-[#00c7c5]/30 hover:bg-[#00c7c5]/50'
+                  ? 'bg-[#00c7c5] w-8'
+                  : 'bg-[#00c7c5]/30 hover:bg-[#00c7c5]/50'
                   }`}
               />
             ))}

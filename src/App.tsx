@@ -1,5 +1,7 @@
 import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 import { Routes, Route, useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
 import { Home } from './pages/Home';
@@ -17,6 +19,12 @@ const RECAPTCHA_SITE_KEY = '6Lf_uVcsAAAAAPJ_A96iDVuh4tReSUqQdFIdzpwp';
 
 export default function App() {
   const navigate = useNavigate();
+  const { i18n } = useTranslation();
+
+  useEffect(() => {
+    document.dir = i18n.language === 'ar' ? 'rtl' : 'ltr';
+    document.documentElement.lang = i18n.language;
+  }, [i18n.language]);
 
   const handleFooterNavigate = (view: string) => {
     switch (view) {

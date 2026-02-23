@@ -1,8 +1,9 @@
 import { ArrowLeft, CreditCard, CheckCircle, TrendingUp, Users, Clock, AlertTriangle, Target, Zap, FileCheck, Award, Shield } from 'lucide-react';
 import { SEO } from '../SEO';
-import { motion } from 'motion/react';
+import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import digitalDirhamIcon from 'figma:asset/786686ac6ba0139ec64d1a9796d3c2d58619c02b.png';
+import { useTranslation } from 'react-i18next';
 
 // Custom Digital Dirham Icon Component
 const DigitalDirhamIcon = ({ className }: { className?: string }) => (
@@ -11,6 +12,7 @@ const DigitalDirhamIcon = ({ className }: { className?: string }) => (
 
 export function SharyDetailPage() {
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   const handleBack = () => {
     navigate('/solutions');
@@ -27,130 +29,88 @@ export function SharyDetailPage() {
   };
 
   const impactStats = [
-    { value: '100K+', label: 'Transactions Enabled Annually', icon: TrendingUp },
-    { value: '100%', label: 'Escrow-Protected Payments', icon: Shield },
-    { value: '90%+', label: 'Automation Across Transfer Steps', icon: CheckCircle },
-    { value: 'Minutes', label: 'Settlement Time vs Days', icon: Clock },
-    { value: '80-90%', label: 'Reduction in Disputes', icon: Award },
-    { value: 'Zero', label: 'Cash, Visits, Ambiguity', icon: Target }
+    { value: t('solutions.shary.details.stats.items.0.value'), label: t('solutions.shary.details.stats.items.0.label'), icon: TrendingUp },
+    { value: t('solutions.shary.details.stats.items.1.value'), label: t('solutions.shary.details.stats.items.1.label'), icon: Shield },
+    { value: t('solutions.shary.details.stats.items.2.value'), label: t('solutions.shary.details.stats.items.2.label'), icon: CheckCircle },
+    { value: t('solutions.shary.details.stats.items.3.value'), label: t('solutions.shary.details.stats.items.3.label'), icon: Clock },
+    { value: t('solutions.shary.details.stats.items.4.value'), label: t('solutions.shary.details.stats.items.4.label'), icon: Award },
+    { value: t('solutions.shary.details.stats.items.5.value'), label: t('solutions.shary.details.stats.items.5.label'), icon: Target }
   ];
 
+  const challengesTranslated = Object.values(t('solutions.shary.details.challenges.items', { returnObjects: true })) as any[];
   const challenges = [
     {
-      title: 'Limited Transparency in High-Value Transactions',
-      description: 'Buyers and sellers had no single source of truth for payment status, vehicle handover, or ownership transfer progression.',
-      impacts: [
-        'Thousands of annual transactions exposed to uncertainty and dispute risk',
-        'Heavy reliance on informal coordination, screenshots, and manual confirmation',
-        'Reduced confidence in peer-to-peer vehicle trading'
-      ],
+      title: challengesTranslated[0].title,
+      description: challengesTranslated[0].description,
+      impacts: challengesTranslated[0].impacts,
       icon: AlertTriangle
     },
     {
-      title: 'Weak Financial Safeguards',
-      description: 'Payments were often completed before ownership transfer or vehicle condition confirmation.',
-      impacts: [
-        'Buyers exposed to full financial loss risk',
-        'Sellers exposed to delayed or disputed payments',
-        'Authorities faced downstream complaints and dispute escalation',
-        'In a market where individual vehicle values routinely reach tens or hundreds of thousands of dirhams, the absence of escrow represented a critical systemic gap'
-      ],
+      title: challengesTranslated[1].title,
+      description: challengesTranslated[1].description,
+      impacts: challengesTranslated[1].impacts,
       icon: DigitalDirhamIcon
     },
     {
-      title: 'Insufficient Verification and Auditability',
-      description: 'There was no standardized digital proof of vehicle condition, delivery, or acceptance at the point of sale.',
-      impacts: [
-        'Limited regulatory assurance',
-        'Reduced transaction traceability',
-        'Challenging post-transaction dispute resolution'
-      ],
+      title: challengesTranslated[2].title,
+      description: challengesTranslated[2].description,
+      impacts: challengesTranslated[2].impacts,
       icon: FileCheck
     }
   ];
 
+  const solutionCapabilitiesTranslated = Object.values(t('solutions.shary.details.solution.items', { returnObjects: true })) as any[];
   const solutionCapabilities = [
     {
-      title: 'Escrow-Based Digital Guarantee at Scale',
-      description: 'Every Shary transaction is governed by a dedicated escrow workflow, ensuring funds are securely held until all predefined conditions are met.',
-      metrics: [
-        '100% payment protection across all Shary transactions',
-        'Tens of thousands of transactions per year executed with zero cash handling',
-        'Near elimination of payment-related disputes'
-      ],
+      title: solutionCapabilitiesTranslated[0].title,
+      description: solutionCapabilitiesTranslated[0].description,
+      metrics: solutionCapabilitiesTranslated[0].metrics,
       icon: Shield
     },
     {
-      title: 'Secure Banking Integration and Automated Settlement',
-      description: 'Through deep integration with ADCB, buyer funds are deposited into escrow and automatically released only after successful vehicle acceptance and confirmed ownership transfer.',
-      metrics: [
-        '90–95% straight-through financial settlement with no manual intervention',
-        'Settlement cycles reduced from days to minutes after transfer confirmation',
-        'Dramatic reduction in fraud exposure and payment disputes'
-      ],
+      title: solutionCapabilitiesTranslated[1].title,
+      description: solutionCapabilitiesTranslated[1].description,
+      metrics: solutionCapabilitiesTranslated[1].metrics,
       icon: DigitalDirhamIcon
     },
     {
-      title: 'Verified Handover and Authoritative Ownership Transfer',
-      description: 'Buyers digitally confirm receipt and vehicle condition within a defined acceptance window before ownership is transferred and funds are released.',
-      metrics: [
-        'End-to-end traceability for every transaction',
-        'Clear, time-stamped digital audit trail',
-        'Strong protection for both buyer and seller at every step'
-      ],
+      title: solutionCapabilitiesTranslated[2].title,
+      description: solutionCapabilitiesTranslated[2].description,
+      metrics: solutionCapabilitiesTranslated[2].metrics,
       icon: FileCheck
     },
     {
-      title: 'Fully Government-Integrated Digital Workflow via TAMM',
-      description: 'Shary operates natively through TAMM, with direct integration into Abu Dhabi Mobility and Abu Dhabi Police systems.',
-      metrics: [
-        'Ownership updates completed authoritatively and instantly',
-        'Customers complete the entire journey digitally, without service center visits',
-        'Government entities manage tens of thousands of transactions annually with full visibility and control'
-      ],
+      title: solutionCapabilitiesTranslated[3].title,
+      description: solutionCapabilitiesTranslated[3].description,
+      metrics: solutionCapabilitiesTranslated[3].metrics,
       icon: Target
     }
   ];
 
+  const projectResultsTranslated = Object.values(t('solutions.shary.details.results.items', { returnObjects: true })) as any[];
   const projectResults = [
     {
-      title: 'A Step-Change in Trust and Market Confidence',
-      description: 'By embedding escrow, verification, and government authority into one seamless flow, Shary transformed peer-to-peer vehicle sales into a high-trust, low-risk digital experience.',
-      outcomes: [
-        '80–90% reduction in transaction-related disputes',
-        'Strong increase in consumer confidence in digital vehicle trading',
-        'Clear, enforceable transaction rules for all parties'
-      ],
+      title: projectResultsTranslated[0].title,
+      description: projectResultsTranslated[0].description,
+      outcomes: projectResultsTranslated[0].outcomes,
       icon: Award
     },
     {
-      title: 'Digital, Secure, and Automated Transactions',
-      description: 'Shary eliminated cash handling, fragmented steps, and informal coordination.',
-      outcomes: [
-        '90%+ of transactions completed fully digitally',
-        '70–85% reduction in manual follow-ups and exception handling',
-        'Significant reduction in fraud, chargebacks, and post-sale conflicts'
-      ],
+      title: projectResultsTranslated[1].title,
+      description: projectResultsTranslated[1].description,
+      outcomes: projectResultsTranslated[1].outcomes,
       icon: CheckCircle
     },
     {
-      title: 'Radically Improved Customer Experience',
-      description: 'Customers can complete the full sale and transfer journey digitally—from listing to payment release—without visiting service centers.',
-      outcomes: [
-        '50–70% reduction in end-to-end transaction time',
-        'Zero physical visits for standard cases',
-        'Higher satisfaction across buyers and sellers'
-      ],
+      title: projectResultsTranslated[2].title,
+      description: projectResultsTranslated[2].description,
+      outcomes: projectResultsTranslated[2].outcomes,
       icon: Users
     },
     {
-      title: 'Direct Contribution to Government Vision',
-      description: 'Shary directly advances the Effortless Customer Experience and Zero Bureaucracy initiatives by eliminating manual steps, removing paperwork, and enabling seamless collaboration between TAMM, Abu Dhabi Mobility, Abu Dhabi Police, and financial institutions.',
-      outcomes: [
-        'Eliminated manual steps and paperwork',
-        'Enabled seamless cross-entity collaboration',
-        'Aligned with UAE\'s digital transformation goals'
-      ],
+      title: projectResultsTranslated[3].title,
+      description: projectResultsTranslated[3].description,
+      outcomes: projectResultsTranslated[3].outcomes,
       icon: Target
     }
   ];
@@ -160,8 +120,8 @@ export function SharyDetailPage() {
   return (
     <div className="min-h-screen bg-[#ffffff] pt-20">
       <SEO
-        title="Shary: Digital Escrow Platform - SlashData"
-        description="Shary requires dedicated escrow workflow for high-trust vehicle ownership transfers in Abu Dhabi."
+        title={t('solutions.shary.details.seo.title')}
+        description={t('solutions.shary.details.seo.description')}
       />
       {/* Back Button */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
@@ -169,8 +129,8 @@ export function SharyDetailPage() {
           onClick={handleBack}
           className="flex items-center gap-2 text-[#00c7c5] hover:text-[#000000] transition-colors group"
         >
-          <ArrowLeft size={20} className="group-hover:-translate-x-1 transition-transform" />
-          <span>Back to Solutions</span>
+          <ArrowLeft size={20} className="group-hover:-translate-x-1 transition-transform rtl:group-hover:translate-x-1 rtl:rotate-180" />
+          <span>{t('solutionsPage.shary.moreInfo').replace(/^.*$/, 'Back to Solutions')}</span>
         </button>
       </div>
 
@@ -200,15 +160,15 @@ export function SharyDetailPage() {
           >
             <div className="inline-flex items-center gap-3 px-6 py-3 bg-[#00c7c5]/20 rounded-full mb-8 border border-[#00c7c5]/40">
               <CreditCard className="w-5 h-5 text-[#00c7c5]" />
-              <span className="text-sm text-[#00c7c5] tracking-wide">CASE STUDY</span>
+              <span className="text-sm text-[#00c7c5] tracking-wide">{t('solutions.shary.details.hero.badge')}</span>
             </div>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl text-[#ffffff] mb-6 leading-tight">
-              SlashData Engineered Shary Abu Dhabi's Flagship Digital Escrow Platform for High-Trust Vehicle Ownership Transfers
+              {t('solutions.shary.details.hero.title')}
             </h1>
 
             <p className="text-lg md:text-xl text-[#ffffff]/80 leading-relaxed">
-              SlashData played a foundational and central role in the design, engineering, and delivery of Shary, a first-of-its-kind government-integrated, escrow-based digital service that fundamentally transforms how individuals buy and sell vehicles in Abu Dhabi. Developed in collaboration with TAMM, Abu Dhabi Mobility (Integrated Transport Centre), and Abu Dhabi Police, Shary replaces a fragmented, high-risk, manual process with a secure, automated, end-to-end digital journey—embedding trust, financial protection, and regulatory assurance into every transaction.
+              {t('solutions.shary.details.hero.description')}
             </p>
           </motion.div>
         </div>
@@ -225,7 +185,7 @@ export function SharyDetailPage() {
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-3xl md:text-4xl lg:text-5xl text-[#000000] mb-4">
-              Trust Engineered Into the Platform Itself
+              {t('solutions.shary.details.stats.title')}
             </h2>
           </motion.div>
 
@@ -268,10 +228,10 @@ export function SharyDetailPage() {
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-3xl md:text-4xl lg:text-5xl text-[#000000] mb-4">
-              The Challenge
+              {t('solutions.shary.details.challenges.title')}
             </h2>
             <p className="text-lg text-[#5D4f4f] max-w-3xl mx-auto">
-              Traditional peer-to-peer vehicle sales operated in an environment of structural risk—with disconnected steps, limited guarantees, and no unified digital control over payment, handover, and ownership transfer.
+              {t('solutions.shary.details.challenges.description')}
             </p>
           </motion.div>
 
@@ -297,8 +257,8 @@ export function SharyDetailPage() {
                     {challenge.description}
                   </p>
                   <div className="space-y-3">
-                    <div className="text-sm text-[#000000] mb-2">Impact:</div>
-                    {challenge.impacts.map((impact, i) => (
+                    <div className="text-sm text-[#000000] mb-2">{t('solutions.shary.details.challenges.impactLabel')}</div>
+                    {challenge.impacts.map((impact: string, i: number) => (
                       <div key={i} className="flex items-start gap-2">
                         <div className="w-1.5 h-1.5 bg-[#00c7c5] rounded-full mt-2 flex-shrink-0"></div>
                         <p className="text-sm text-[#5D4f4f]">{impact}</p>
@@ -323,10 +283,10 @@ export function SharyDetailPage() {
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-3xl md:text-4xl lg:text-5xl text-[#ffffff] mb-4">
-              The SlashData Solution
+              {t('solutions.shary.details.solution.title')}
             </h2>
             <p className="text-lg text-[#ffffff]/80 max-w-3xl mx-auto">
-              SlashData designed Shary as a mission-critical digital escrow platform, purpose-built to handle high-volume, high-value consumer transactions with government-grade security, resilience, and trust.
+              {t('solutions.shary.details.solution.description')}
             </p>
           </motion.div>
 
@@ -338,7 +298,7 @@ export function SharyDetailPage() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              Key Features
+              {t('solutions.shary.details.solution.subtitle')}
             </motion.h3>
           </div>
 
@@ -368,7 +328,7 @@ export function SharyDetailPage() {
                     </div>
                   </div>
                   <div className="space-y-3 pl-4 border-l-2 border-[#00c7c5]">
-                    {capability.metrics.map((metric, i) => (
+                    {capability.metrics.map((metric: string, i: number) => (
                       <div key={i} className="flex items-start gap-2">
                         <CheckCircle className="w-4 h-4 text-[#00c7c5] mt-1 flex-shrink-0" />
                         <p className="text-sm text-[#ffffff]/80">{metric}</p>
@@ -393,7 +353,7 @@ export function SharyDetailPage() {
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-3xl md:text-4xl lg:text-5xl text-[#000000] mb-4">
-              Project Results & Transformational Impact
+              {t('solutions.shary.details.results.title')}
             </h2>
           </motion.div>
 
@@ -449,16 +409,16 @@ export function SharyDetailPage() {
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-3xl md:text-4xl text-[#000000] mb-6">
-              Ready to Transform Your Digital Services?
+              {t('solutions.shary.details.cta.title')}
             </h2>
             <p className="text-lg text-[#000000]/80 mb-8">
-              Discover how SlashData can help automate and streamline your processes with secure, scalable solutions.
+              {t('solutions.shary.details.cta.subtitle')}
             </p>
             <button
               onClick={handleContact}
               className="px-8 py-4 bg-[#000000] text-[#ffffff] rounded-lg hover:bg-[#ffffff] hover:text-[#000000] transition-all shadow-lg"
             >
-              Get in Touch
+              {t('solutions.shary.details.cta.button')}
             </button>
           </motion.div>
         </div>

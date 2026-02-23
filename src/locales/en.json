@@ -1,0 +1,813 @@
+{
+    "translation": {
+        "nav": {
+            "home": "Home",
+            "aboutUs": "About Us",
+            "solutions": "Solutions",
+            "pressAndNews": "Press and News",
+            "contactUs": "CONTACT US"
+        },
+        "footer": {
+            "tagline": "Leading UAE-based technology company powering intelligent digital governance",
+            "quickLinks": "Quick Links",
+            "ourOffices": "Our Offices",
+            "connectWithUs": "Connect With Us",
+            "rights": "© 2026 SlashData. All rights reserved. | Privacy Policy | Terms of Service",
+            "offices": {
+                "ad": "Abu Dhabi: ADGM, Al Maryah Island",
+                "dubai": "Dubai: Emmar Square",
+                "sharjah": "Sharjah: Almajaz 3"
+            }
+        },
+        "hero": {
+            "trustedBadge": "Trusted by Government & 250+ Private Partners",
+            "headlinePrefix": "Powering the UAE's ",
+            "headlineHighlight": "Next-Generation Digital Ecosystem",
+            "subtitle": "Connecting Government and Private Sector Within a Unified Digital Ecosystem",
+            "learnMore": "Learn More",
+            "becomePartner": "Become a Partner"
+        },
+        "about": {
+            "badge": "ABOUT US",
+            "title": "Who We Are",
+            "subtitle": "A technology leader delivering innovative digital solutions across the UAE",
+            "introPrefix": "SlashData is a leading ",
+            "introHighlight": "UAE-based technology company",
+            "introSuffix": " with offices in Abu Dhabi, Dubai and Sharjah, providing cutting-edge digital solutions for government and private sector partners across multiple territories.",
+            "mission": "As a national digital solutions provider, we are aligned with the Zero Government Bureaucracy Program and the 'Next 50' National Strategy.",
+            "stats": {
+                "transactionsLabel": "Transactions",
+                "transactionsValue": "100M+",
+                "privatePartnersLabel": "Private Partners",
+                "privatePartnersValue": "250+",
+                "govPartnersLabel": "Government Partners",
+                "govPartnersValue": "7+",
+                "teamLabel": "Team Members",
+                "teamValue": "110+"
+            }
+        },
+        "solutions": {
+            "badge": "Our Solutions",
+            "title": "What We Offer",
+            "subtitle": "Delivering cutting-edge digital solutions that transform how government and businesses operate",
+            "learnMore": "Learn More",
+            "rabet": {
+                "name": "Rabet",
+                "description": "Rabet enables secure, real-time interoperability for health insurance policy data—ingesting, validating, and reconciling information between insurance providers and ICP (Identity, Citizenship, Customs & Port Security) to ensure accurate, compliant exchanges.",
+                "tagline": "Health Insurance Integration",
+                "details": {
+                    "hero": {
+                        "badge": "CASE STUDY",
+                        "title": "SlashData's Role in Automating ICP's Health Insurance Verification Process",
+                        "description": "As part of a national digital transformation initiative with the Federal Authority for Identity, Citizenship, Customs and Port Security (ICP), SlashData delivered a federal-scale platform that automates health insurance verification across the UAE. The initiative directly supports the UAE's Zero Bureaucracy Vision by eliminating manual checks, paper-based submissions, and fragmented insurer validation processes."
+                    },
+                    "stats": {
+                        "title": "Rabet by the Numbers",
+                        "items": [
+                            {
+                                "value": "43+",
+                                "label": "Insurers Integrated"
+                            },
+                            {
+                                "value": "Millions",
+                                "label": "Transactions Automated Annually"
+                            },
+                            {
+                                "value": "90%+",
+                                "label": "Straight-Through Processing"
+                            },
+                            {
+                                "value": "80-95%",
+                                "label": "Fraud Risk Reduction"
+                            },
+                            {
+                                "value": "70-90%",
+                                "label": "Reduction in Manual Workload"
+                            },
+                            {
+                                "value": "99.9%",
+                                "label": "Availability Target"
+                            },
+                            {
+                                "value": "Seconds",
+                                "label": "Instead of Days for Verification"
+                            }
+                        ]
+                    },
+                    "challenges": {
+                        "title": "The Challenge",
+                        "description": "Before automation, health insurance verification relied on uploaded documents and manual inspection, creating operational inefficiencies, fraud exposure, and customer friction at scale.",
+                        "impactLabel": "Impact:",
+                        "items": [
+                            {
+                                "title": "Absence of Real-Time Insurance Verification",
+                                "description": "Insurance validity could not be verified live against insurer systems at the time of submission.",
+                                "impacts": [
+                                    "15–25% of submitted insurance policies were inactive (expired, cancelled, or suspended) at submission time",
+                                    "Delayed detection led to reprocessing cycles of 3–7 business days",
+                                    "Increased downstream rejections and resubmissions"
+                                ]
+                            },
+                            {
+                                "title": "Elevated Fraud Risk from Document-Based Proof",
+                                "description": "Paper and uploaded insurance cards lacked authenticity and traceability controls.",
+                                "impacts": [
+                                    "8–15% of submissions required secondary verification due to inconsistencies",
+                                    "Exposure to altered, duplicated, or reused insurance documents",
+                                    "Increased audit effort and compliance risk"
+                                ]
+                            },
+                            {
+                                "title": "High Manual Workload and Data Errors",
+                                "description": "Verification depended heavily on human review and data entry.",
+                                "impacts": [
+                                    "70–85% of verification activities were manual",
+                                    "Data entry errors contributed to 5–12% rework rates",
+                                    "Increased in-person visits and customer service interactions"
+                                ]
+                            }
+                        ]
+                    },
+                    "solution": {
+                        "title": "The SlashData Solution",
+                        "description": "SlashData implemented a fully automated, end-to-end electronic insurance verification platform, integrating ICP systems directly with health insurance providers through secure, standardized APIs.",
+                        "subtitle": "System Capabilities",
+                        "items": [
+                            {
+                                "title": "Unified Insurance Integration Platform",
+                                "description": "A centralized integration layer enabling insurers to submit, update, and validate policy data electronically.",
+                                "metrics": [
+                                    "Supports 43+ insurance companies nationwide",
+                                    "Designed to handle millions of insurance verification transactions annually",
+                                    "Centralized monitoring, validation, and exception management"
+                                ]
+                            },
+                            {
+                                "title": "Real-Time Data Connectivity",
+                                "description": "Standardized APIs enable near real-time policy status synchronization between insurers and ICP.",
+                                "metrics": [
+                                    "90–97% of verification requests completed automatically in real time",
+                                    "Policy validation time reduced from days to seconds",
+                                    "Immediate detection of expired or cancelled policies"
+                                ]
+                            },
+                            {
+                                "title": "Nationwide Scalability & High Availability",
+                                "description": "Built for federal-scale throughput and continuous availability.",
+                                "metrics": [
+                                    "99.9% service availability target",
+                                    "Capacity to process thousands of concurrent transactions",
+                                    "Elastic scaling to absorb peak demand periods without degradation"
+                                ]
+                            },
+                            {
+                                "title": "Operational Enablement for Insurers",
+                                "description": "Comprehensive onboarding and support framework including documentation, testing environments, and live operational support.",
+                                "metrics": [
+                                    "Insurer onboarding time reduced by 50–75%",
+                                    "40–60% reduction in integration-related support requests after stabilization",
+                                    "Faster adoption through standardized technical interfaces"
+                                ]
+                            }
+                        ]
+                    },
+                    "results": {
+                        "title": "Project Results & Measurable Impact",
+                        "items": [
+                            {
+                                "title": "Large-Scale Transaction Automation",
+                                "description": "The platform enables fully digital insurance verification across ICP services.",
+                                "itemsList": [
+                                    "Millions of insurance verification transactions processed annually",
+                                    "90%+ straight-through processing rate with no human intervention",
+                                    "Real-time verification embedded directly into ICP digital journeys"
+                                ]
+                            },
+                            {
+                                "title": "Fraud Prevention & Risk Reduction",
+                                "description": "Direct insurer-to-ICP verification eliminates document-based fraud vectors.",
+                                "itemsList": [
+                                    "80–95% reduction in document-related fraud exposure",
+                                    "Near elimination of forged, altered, or reused insurance submissions",
+                                    "Stronger auditability and traceability of verification decisions"
+                                ]
+                            },
+                            {
+                                "title": "Reduction in Human Intervention",
+                                "description": "Manual auditing and data entry are largely eliminated.",
+                                "itemsList": [
+                                    "70–90% reduction in manual verification workload",
+                                    "50–80% reduction in average processing time per application",
+                                    "Staff capacity redirected to exception handling and higher-value activities"
+                                ]
+                            },
+                            {
+                                "title": "Improved Customer Experience",
+                                "description": "Automation significantly reduces friction for residents and businesses.",
+                                "itemsList": [
+                                    "40–60% faster end-to-end application completion",
+                                    "30–50% fewer customer follow-ups and resubmissions",
+                                    "Reduced need for in-person service visits"
+                                ]
+                            },
+                            {
+                                "title": "Elimination of Paper-Based Transactions",
+                                "description": "The solution enables a fully digital insurance verification environment.",
+                                "itemsList": [
+                                    "100% elimination of paper insurance documents in ICP workflows",
+                                    "Reduced storage, handling, and archival costs",
+                                    "Improved sustainability and compliance readiness"
+                                ]
+                            },
+                            {
+                                "title": "Protection of Stakeholder Rights",
+                                "description": "Secure, authoritative verification protects all parties involved.",
+                                "itemsList": [
+                                    "Insurers' data verified directly at source",
+                                    "ICP decisions backed by real-time, trusted policy data",
+                                    "Citizens protected from delays, errors, and unjustified rejections"
+                                ]
+                            }
+                        ]
+                    },
+                    "cta": {
+                        "title": "Ready to Transform Your Digital Services?",
+                        "subtitle": "Discover how SlashData can help automate and streamline your processes with secure, scalable solutions.",
+                        "button": "Get in Touch"
+                    },
+                    "seo": {
+                        "title": "Rabet: Digital Bridge for Insurance & Traffic - SlashData",
+                        "description": "Rabet connects 43+ insurance providers with federal traffic systems for real-time policy verification."
+                    }
+                }
+            },
+            "rhoon": {
+                "name": "Rhoon",
+                "description": "Rhoon modernizes vehicle mortgage registration and clearing processes—providing a centralized platform that connects financial institutions, dealerships, and licensing authorities for instant, transparent mortgage management.",
+                "tagline": "Vehicle Mortgage Management",
+                "details": {
+                    "hero": {
+                        "badge": "CASE STUDY",
+                        "title": "SlashData's Role in Streamlining Vehicle Mortgage Data Access with Rhoon",
+                        "description": "Through a digital transformation project with the Integrated Transport Centre (Abu Dhabi Mobility) and Abu Dhabi Police, SlashData developed Rhoon—a modern platform that streamlines vehicle mortgage data access and exchange across the UAE. The initiative supports the Effortless Customer Experience Program and advances the UAE's Zero Bureaucracy Vision by improving speed, transparency, and service consistency for a large ecosystem of partners."
+                    },
+                    "stats": {
+                        "title": "Summary Impact Snapshot with the following Key Achievements",
+                        "items": [
+                            {
+                                "value": "200+",
+                                "label": "Service Partners Nationwide"
+                            },
+                            {
+                                "value": "Millions",
+                                "label": "Transactions Automated Annually"
+                            },
+                            {
+                                "value": "85-90%",
+                                "label": "Straight-Through Processing"
+                            },
+                            {
+                                "value": "99.9%",
+                                "label": "Availability Target"
+                            },
+                            {
+                                "value": "50-70%",
+                                "label": "Reduction in Onboarding Time"
+                            },
+                            {
+                                "value": "Minutes",
+                                "label": "Processing Time vs Legacy Delays"
+                            }
+                        ]
+                    },
+                    "challenges": {
+                        "title": "The Challenge",
+                        "description": "The legacy process was already automated, but it was constrained by legacy-system limitations—including fragmented partner connectivity, inconsistent data formats, limited real-time visibility, and heavy exception handling. At national scale, these limitations become more visible: in 2024, vehicle registrations reached 213,284 in Abu Dhabi and 104,704 across the Northern Emirates (Sharjah, Ajman, Umm Al Quwain, Ras Al Khaimah, Fujairah)—a combined scale of 317,988 registrations that reflects the broader volume of vehicle-related activities the ecosystem must support.",
+                        "impactLabel": "Impact:",
+                        "items": [
+                            {
+                                "title": "Automated, but Not Fully Streamlined End-to-End",
+                                "description": "Automation existed, but workflows often relied on legacy dependencies (batch updates, inconsistent partner submission mechanisms, and manual exception handling).",
+                                "impacts": [
+                                    "Standard cases could progress, but exceptions frequently introduced delays of hours to days",
+                                    "High operational overhead to reconcile mismatched or incomplete records",
+                                    "Limited self-service tracking for partners in legacy flows"
+                                ]
+                            },
+                            {
+                                "title": "Limited Monitoring, Control, and Operational Analytics",
+                                "description": "The process lacked a centralized operational view across participating entities.",
+                                "impacts": [
+                                    "Limited real-time visibility into submission status and processing SLAs",
+                                    "Reactive exception management and delayed issue resolution",
+                                    "Minimal analytics to track partner activity, volumes, and turnaround performance"
+                                ]
+                            },
+                            {
+                                "title": "Non-Uniform Partner Onboarding and Support Needs",
+                                "description": "Partners differed significantly in digital maturity and capabilities.",
+                                "impacts": [
+                                    "Uneven onboarding experience and variable integration quality",
+                                    "Higher support load due to different operating models",
+                                    "Difficulty standardizing data quality and performance across the ecosystem"
+                                ]
+                            }
+                        ]
+                    },
+                    "solution": {
+                        "title": "The SlashData Solution",
+                        "description": "Rhoon is a secure digital platform developed by SlashData in partnership with Abu Dhabi Mobility and Abu Dhabi Police, enabling electronic submission, validation, and exchange of vehicle mortgage data across a national partner network—including banks, financial institutions, car showrooms, government and semi-government entities, and trading companies.",
+                        "subtitle": "Key Features",
+                        "items": [
+                            {
+                                "title": "Unified Digital Mortgage Platform",
+                                "description": "A centralized platform enabling Service Partners to submit, manage, and track vehicle mortgage data through standardized and secure workflows—built to support 170+ Service Partners across the UAE.",
+                                "metrics": [
+                                    "85–95% straight-through processing for clean submissions",
+                                    "Consistent workflows across partner types, with fewer exceptions escalated manually"
+                                ]
+                            },
+                            {
+                                "title": "Electronic Data Exchange",
+                                "description": "Secure system-to-system connectivity enabling automated data submission to Abu Dhabi Mobility and Abu Dhabi Police.",
+                                "metrics": [
+                                    "Processing cycles reduced from legacy delays to minutes for standard transactions",
+                                    "Faster resolution through structured validation and automated checks"
+                                ]
+                            },
+                            {
+                                "title": "Scalable National Infrastructure",
+                                "description": "High-availability architecture designed for continuous operations at national scale.",
+                                "metrics": [
+                                    "99.9% availability target",
+                                    "Capacity to support thousands of concurrent submissions, aligned to large real-world vehicle activity volumes such as the 317,988 combined 2024 registrations across Abu Dhabi + Northern Emirates"
+                                ]
+                            },
+                            {
+                                "title": "Inclusive Partner Enablement",
+                                "description": "A dedicated web portal for entities without integration capabilities, plus dashboards and reporting tools providing real-time visibility into submissions and processing status.",
+                                "metrics": [
+                                    "Partner onboarding time reduced by 50–70% using standardized tooling and guided enablement",
+                                    "Improved partner experience through self-service submission and real-time tracking"
+                                ]
+                            }
+                        ]
+                    },
+                    "results": {
+                        "title": "Project Results",
+                        "items": [
+                            {
+                                "title": "Improved Data Accuracy and Reliability",
+                                "description": "Automation and structured data exchange improved data integrity and reduced mismatches.",
+                                "outcomes": [
+                                    "60–80% reduction in data quality issues caused by inconsistent formats and exception-driven corrections",
+                                    "Improved synchronization reliability with Abu Dhabi Mobility and Abu Dhabi Police databases"
+                                ]
+                            },
+                            {
+                                "title": "Operational Insights and Reporting",
+                                "description": "Built-in dashboards provide Abu Dhabi Mobility and Abu Dhabi Police with real-time oversight.",
+                                "outcomes": [
+                                    "Real-time visibility into submission volumes, processing status, exceptions, and partner activity",
+                                    "Proactive SLA monitoring and continuous optimization through analytics"
+                                ]
+                            },
+                            {
+                                "title": "Alignment with National Vision",
+                                "description": "The project contributes directly to the Effortless Customer Experience Program and supports the UAE's Zero Bureaucracy Vision by simplifying government-to-business interactions and improving customer satisfaction.",
+                                "outcomes": [
+                                    "Streamlined government-to-business interactions",
+                                    "Enhanced customer satisfaction through faster, more reliable service",
+                                    "Direct contribution to UAE's digital transformation goals"
+                                ]
+                            }
+                        ]
+                    },
+                    "cta": {
+                        "title": "Ready to Transform Your Digital Services?",
+                        "subtitle": "Discover how SlashData can help automate and streamline your processes with secure, scalable solutions.",
+                        "button": "Get in Touch"
+                    },
+                    "seo": {
+                        "title": "Rhoon: Vehicle Mortgage Data Platform - SlashData",
+                        "description": "Rhoon streamlines vehicle mortgage data access and exchange for Abu Dhabi Mobility and Police."
+                    }
+                }
+            },
+            "wtheeq": {
+                "name": "Wtheeq",
+                "description": "Wtheeq transforms insurance verification into a real-time digital capability embedded directly into federal mobility services.",
+                "tagline": "Real-Time Car Insurance Data",
+                "page": {
+                    "seo": {
+                        "title": "Wtheeq Platform - SlashData",
+                        "description": "Real-Time Car Insurance Data Integration with Federal Traffic & Licensing Systems."
+                    },
+                    "hero": {
+                        "badge": "Solution Case Study",
+                        "title": "Wtheeq Platform",
+                        "subtitle": "Real-Time Car Insurance Data Integration with Federal Traffic & Licensing Systems",
+                        "description": "A vital digital transformation initiative ensuring data accuracy, real-time verification, and regulatory compliance within the UAE's mobility ecosystem.",
+                        "stats": [
+                            {
+                                "value": "38",
+                                "label": "Target Insurance Companies"
+                            },
+                            {
+                                "value": "100%",
+                                "label": "Real-Time Sync"
+                            },
+                            {
+                                "value": "Zero",
+                                "label": "Manual Entry"
+                            },
+                            {
+                                "value": "24/7",
+                                "label": "Availability"
+                            }
+                        ]
+                    },
+                    "overview": "Through a digital transformation initiative led by the <strong>Integrated Transport Centre (Abu Dhabi Mobility)</strong>, <strong>Abu Dhabi Police</strong>, and <strong>SlashData</strong>, the solution serves the UAE's <strong>Zero Bureaucracy Vision</strong>. Enabling seamless, user-centric, and connected services across the mobility landscape.",
+                    "challenges": {
+                        "title": "Challenge",
+                        "description": "The existing practice for car insurance policy data uploads provided the foundational link between insurance providers and Integrated Transport Centre (Abu Dhabi Mobility) Abu Dhabi Police. The following key challenges were identified in the current practice:",
+                        "items": [
+                            {
+                                "title": "Limited User Experience (UX/UI)",
+                                "description": "The legacy portal lacked an intuitive interface, resulting in a slow and confusing experience for users managing daily uploads and validations."
+                            },
+                            {
+                                "title": "Integration Difficulties",
+                                "description": "Limited documentation and minimal real-time support during onboarding."
+                            },
+                            {
+                                "title": "Resource Constraints Among Partners",
+                                "description": "Several smaller insurance firms operated with limited in-house IT teams, making it difficult to complete API integrations, troubleshoot data sync issues, and maintain compliance independently."
+                            }
+                        ]
+                    },
+                    "solution": {
+                        "title": "The SlashData Solution",
+                        "description": "<strong>Wtheeq</strong>, developed and implemented by SlashData in strategic partnership with the <strong>Integrated Transport Centre (Abu Dhabi Mobility)</strong> and <strong>Abu Dhabi Police</strong>, is a modern digital platform designed to streamline the user experience. The solution enables electronic data exchange for insurance companies in UAE; with a capability to provide the solution to <strong>38 insurance companies</strong> in UAE.",
+                        "items": [
+                            {
+                                "title": "Modern Digital Platform",
+                                "description": "User-friendly interface designed for insurance companies to manage policy uploads with ease and efficiency."
+                            },
+                            {
+                                "title": "Electronic Data Exchange",
+                                "description": "Seamless API-based integration enabling real-time synchronization with federal systems."
+                            },
+                            {
+                                "title": "Scalable Infrastructure",
+                                "description": "Built to support all 38 insurance companies operating in the UAE with reliable performance."
+                            },
+                            {
+                                "title": "Comprehensive Support",
+                                "description": "Real-time technical support and detailed documentation for smooth onboarding and operation."
+                            }
+                        ]
+                    },
+                    "results": {
+                        "title": "Project Results",
+                        "items": [
+                            {
+                                "title": "Enhanced Efficiency and Real-Time Integration",
+                                "description": "Ensured real-time synchronization of policy data with the central systems, significantly reducing service completion time and eliminating the need for repetitive manual updates."
+                            },
+                            {
+                                "title": "Improved Data Accuracy and Regulatory Compliance",
+                                "description": "Wtheeq's API-based integration reduced human error by ensuring that all insurance policy data is automatically validated and verified before submission."
+                            },
+                            {
+                                "title": "Operational Insights and Transparency",
+                                "description": "Wtheeq introduced real-time dashboards that provide stakeholders — including Integrated Transport Centre (Abu Dhabi Mobility), Abu Dhabi Police, and participating insurers — with visibility into policy uploads, validation statuses, and synchronization metrics."
+                            },
+                            {
+                                "title": "Alignment with the UAE's National Vision",
+                                "description": "By simplifying the data exchange process and fostering interoperability between government entities and private insurers, WTHEEQ directly contributes to the Zero Bureaucracy Vision."
+                            }
+                        ]
+                    },
+                    "cta": {
+                        "title": "Ready to Transform Your Digital Infrastructure?",
+                        "subtitle": "Discover how SlashData can help modernize your systems and deliver innovative solutions.",
+                        "backToHome": "Back to Home",
+                        "backToSolutions": "Back to Solutions"
+                    }
+                },
+                "details": {
+                    "hero": {
+                        "badge": "CASE STUDY",
+                        "title": "SlashData Powered Wtheeq The UAE's Real-Time Car Insurance Data Backbone for Federal Traffic & Licensing Systems",
+                        "description": "SlashData played a strategic and execution-critical role in the design, development, and deployment of Wtheeq, a national digital platform that enables real-time car insurance data integration across the UAE's federal traffic and licensing ecosystem.\n\nDelivered in partnership with the Integrated Transport Centre (Abu Dhabi Mobility) and Abu Dhabi Police, Wtheeq serves as a foundational data layer for the UAE's mobility services—ensuring data accuracy, instant verification, regulatory compliance, and seamless service continuity. The initiative directly advances the UAE's Zero Bureaucracy Vision, enabling connected, user-centric, and fully digital government services."
+                    },
+                    "stats": {
+                        "title": "Wtheeq is Not Just a System — It is a National Insurance Data Backbone with the following Key Achievements",
+                        "items": [
+                            {
+                                "value": "38",
+                                "label": "Insurers Connected"
+                            },
+                            {
+                                "value": "Millions",
+                                "label": "Policy Transactions Synchronized Annually"
+                            },
+                            {
+                                "value": "90%+",
+                                "label": "Real-Time Validation"
+                            },
+                            {
+                                "value": "70-90%",
+                                "label": "Improvement in Data Quality"
+                            },
+                            {
+                                "value": "99.9%",
+                                "label": "Availability Target"
+                            },
+                            {
+                                "value": "Instant",
+                                "label": "Verification Instead of Delays"
+                            }
+                        ]
+                    },
+                    "challenges": {
+                        "title": "The Challenge",
+                        "description": "Insurance policy uploads formed the core data bridge between insurance providers, Abu Dhabi Mobility, and Abu Dhabi Police. However, as transaction volumes grew and regulatory expectations increased, the existing model exposed structural limitations.",
+                        "impactLabel": "Impact:",
+                        "items": [
+                            {
+                                "title": "Data Quality and Compliance Risk at Scale",
+                                "description": "Limited validation controls allowed inconsistent, incomplete, or delayed data submissions.",
+                                "impacts": [
+                                    "5–10% of uploaded policies required correction or reprocessing",
+                                    "Increased compliance risk during enforcement, registration, and renewal activities",
+                                    "Higher operational load for insurers and regulators during peak periods"
+                                ]
+                            },
+                            {
+                                "title": "Scalability and Resilience Constraints",
+                                "description": "Legacy architectures were not designed for sustained national growth.",
+                                "impacts": [
+                                    "Performance degradation during high-volume periods (renewals, peak registrations)",
+                                    "Increased maintenance effort to onboard new insurers or expand capacity",
+                                    "Limited ability to scale toward real-time, event-driven services"
+                                ]
+                            },
+                            {
+                                "title": "Fragmented and Inefficient User Experience",
+                                "description": "Non-intuitive interfaces and semi-manual validation slowed operations.",
+                                "impacts": [
+                                    "Slower upload cycles and higher error rates",
+                                    "Increased reliance on support teams",
+                                    "Reduced operational efficiency for insurers managing tens of thousands of policies per year"
+                                ]
+                            }
+                        ]
+                    },
+                    "solution": {
+                        "title": "The SlashData Solution",
+                        "description": "Wtheeq, designed and implemented by SlashData in close partnership with Abu Dhabi Mobility and Abu Dhabi Police, is a modern, API-driven insurance data exchange platform purpose-built for national-scale operations. The platform enables secure, real-time electronic data exchange for the licensed insurance companies in the UAE, transforming insurance verification into a real-time, automated, and authoritative process.",
+                        "subtitle": "Key Capabilities",
+                        "items": [
+                            {
+                                "title": "Modern Digital Platform for Insurers",
+                                "description": "A streamlined, intuitive interface enabling insurers to manage high-volume policy uploads with speed and confidence.",
+                                "metrics": [
+                                    "40–60% reduction in time required to submit and manage policy data",
+                                    "Lower error rates through guided workflows and built-in validation",
+                                    "Improved productivity across insurer operations handling hundreds of thousands of policies annually"
+                                ]
+                            },
+                            {
+                                "title": "Real-Time Electronic Data Exchange",
+                                "description": "API-based integration enables instant synchronization with federal traffic and licensing systems.",
+                                "metrics": [
+                                    "90–98% of policy records validated and synchronized in real time",
+                                    "50–80% reduction in service completion time for insurance-dependent processes",
+                                    "Elimination of batch delays and repetitive manual updates",
+                                    "Policy status available instantly for registration, renewal, and enforcement services"
+                                ]
+                            },
+                            {
+                                "title": "Scalable, National-Grade Infrastructure",
+                                "description": "Built to support the full UAE insurance market and future growth.",
+                                "metrics": [
+                                    "Supports 38 insurance companies nationwide",
+                                    "Designed to process millions of insurance policy transactions annually",
+                                    "99.9% availability target, ensuring continuous operation for mission-critical services"
+                                ]
+                            },
+                            {
+                                "title": "Comprehensive Onboarding and Support",
+                                "description": "End-to-end enablement ensures rapid ecosystem adoption.",
+                                "metrics": [
+                                    "50–70% faster onboarding for new insurers",
+                                    "Reduced support dependency through documentation, monitoring, and real-time assistance",
+                                    "Faster stabilization and consistent performance across partners"
+                                ]
+                            }
+                        ]
+                    },
+                    "results": {
+                        "title": "Key Achievements",
+                        "items": [
+                            {
+                                "title": "Real-Time Verification and Operational Acceleration",
+                                "description": "Wtheeq transformed insurance verification into a real-time digital capability embedded directly into federal mobility services.",
+                                "outcomes": [
+                                    "Insurance verification completed in real time across registration, renewal, and enforcement workflows",
+                                    "Dramatic reduction in processing delays and service completion times",
+                                    "Improved customer experience through instant policy validation"
+                                ]
+                            },
+                            {
+                                "title": "Improved Data Accuracy and Regulatory Compliance",
+                                "description": "Automated validation and authoritative synchronization strengthened compliance.",
+                                "outcomes": [
+                                    "70–90% improvement in data quality and consistency",
+                                    "Stronger regulatory assurance through real-time validation",
+                                    "Reduced compliance risk across the insurance ecosystem"
+                                ]
+                            },
+                            {
+                                "title": "Operational Transparency and Insight",
+                                "description": "Wtheeq introduced real-time dashboards for all stakeholders.",
+                                "outcomes": [
+                                    "Real-time visibility into policy submissions, validations, and exceptions",
+                                    "Proactive monitoring and faster issue resolution",
+                                    "Data-driven insights for continuous optimization"
+                                ]
+                            },
+                            {
+                                "title": "Tangible Product Value at National Scale",
+                                "description": "Wtheeq functions as a core digital utility for the UAE mobility ecosystem.",
+                                "outcomes": [
+                                    "Supports millions of policy transactions annually",
+                                    "Enables seamless integration across 38 insurance providers",
+                                    "Provides mission-critical infrastructure for federal mobility services"
+                                ]
+                            },
+                            {
+                                "title": "Alignment with the UAE's National Vision",
+                                "description": "Wtheeq directly advances the Zero Bureaucracy Vision, demonstrating how platform-based digital infrastructure can unlock scalable, high-impact government services.",
+                                "outcomes": [
+                                    "Eliminated manual steps and paper-based processes",
+                                    "Enabled fully digital, user-centric government services",
+                                    "Demonstrated scalable model for digital transformation"
+                                ]
+                            }
+                        ]
+                    },
+                    "cta": {
+                        "title": "Ready to Transform Your Digital Services?",
+                        "subtitle": "Discover how SlashData can help automate and streamline your processes with secure, scalable solutions.",
+                        "button": "Get in Touch"
+                    },
+                    "seo": {
+                        "title": "Wtheeq Case Study - SlashData",
+                        "description": "Learn how SlashData powered Wtheeq, the UAE's real-time car insurance data backbone."
+                    }
+                }
+            },
+            "shary": {
+                "name": "Shary",
+                "description": "Shary delivers end-to-end vehicle ownership transfers powered by a secure escrow account—protecting funds from start to finish and releasing payment only after verified handover, backed by full transparency and auditable records.",
+                "tagline": "Secure Vehicle Transfers"
+            }
+        },
+        "partners": {
+            "badge": "OUR PARTNERS",
+            "title": "Trusted Partnerships",
+            "subtitle": "Collaborating with leading government entities and private sector organizations",
+            "list": {
+                "icp": "Federal Authority For Identity, Citizenship, Customs & Port Security (ICP)",
+                "adp": "Abu Dhabi Police",
+                "tamm": "TAMM",
+                "itc": "Integrated Transport Center",
+                "adm": "Abu Dhabi Mobility",
+                "pcfc": "The Ports, Customs and Free Zone Corporation (PCFC)",
+                "adcb": "ADCB",
+                "enbd": "Emirates NBD",
+                "fab": "FAB",
+                "adnic": "ADNIC",
+                "gig": "GIG",
+                "orient": "Orient Insurance",
+                "dubaiIns": "Dubai Insurance"
+            }
+        },
+        "blog": {
+            "title": "Press & News",
+            "subtitle": "Stay updated with the latest insights, innovations, and success stories from SlashData",
+            "featured": "Featured",
+            "readMore": "Read More",
+            "viewAll": "View All Articles",
+            "articles": {
+                "gitex2025": {
+                    "title": "SlashData Launches Shary at Gitex 2025",
+                    "excerpt": "SlashData, in partnership with TAMM, Abu Dhabi Police and Integrated Transport Center, is excited to announce the launch of Shary during Gitex 2025, a new step toward smarter, more connected digital services.",
+                    "fullContent": "SlashData, a leading UAE-based technology company, has officially launched Shary at Gitex 2025, marking a significant milestone in digital transformation. This innovative platform, developed in partnership with TAMM, Abu Dhabi Police, and Integrated Transport Center, represents a new era of smarter, more connected digital services for the UAE. Shary aims to streamline government and private sector services, providing seamless integration and enhanced user experiences for citizens and residents across the Emirates.",
+                    "category": "Partnership",
+                    "date": "October, 2025"
+                },
+                "pcfc": {
+                    "title": "SlashData is proud to partner with the Ports, Customs & Freezone corporation (PCFC)",
+                    "excerpt": "During Gitex Global 2025, and MOU was signed between Customs & Freezone corporation (PCFC) and SlashData Digital LLC to launch Bahri, the first platform that enables instant, secure and fully digital submission of vessel insurance policies",
+                    "fullContent": "At Gitex Global 2025, a landmark MOU was signed between the Ports, Customs & Freezone Corporation (PCFC) and SlashData Digital LLC. This partnership introduces Bahri, a groundbreaking platform that revolutionizes maritime operations by enabling instant, secure, and fully digital submission of vessel insurance policies. Bahri represents a significant advancement in port operations efficiency, eliminating paperwork and reducing processing times while maintaining the highest security standards. This collaboration demonstrates SlashData's commitment to digitizing critical infrastructure services across the UAE.",
+                    "category": "Partnership",
+                    "date": "October, 2025"
+                },
+                "icp": {
+                    "title": "Federal Authority for Identity, Citizenship, Customs & Port Security (ICP) Honors SlashData at GITEX 2024",
+                    "excerpt": "The honour highlights the exceptional collaboration between ICP and SlashData in automating various procedures and transactions for one of the authority's services through the Rabet. The electronic platform brings together over 43 insurance companies within a unified database, enabling the automation of health insurance verification for authority clients.",
+                    "fullContent": "SlashData received prestigious recognition from the Federal Authority for Identity, Citizenship, Customs & Port Security (ICP) at GITEX 2024. This honor acknowledges the exceptional collaboration between ICP and SlashData in automating critical procedures and transactions through the Rabet platform. The innovative electronic platform has successfully integrated over 43 insurance companies into a unified database, dramatically improving efficiency in health insurance verification for authority clients. This achievement demonstrates SlashData's capability to deliver large-scale digital transformation solutions that serve both government entities and the public sector.",
+                    "category": "Recognition",
+                    "date": "October, 2024"
+                }
+            }
+        },
+        "locations": {
+            "badge": "OUR LOCATIONS",
+            "titlePrefix": "Find Us Across ",
+            "titleHighlight": "UAE",
+            "subtitle": "Strategically located to serve our partners across the Emirates",
+            "hq": "HQ",
+            "directions": "Directions",
+            "contact": "Contact",
+            "offices": {
+                "ad": {
+                    "city": "Abu Dhabi",
+                    "address": "ADGM, Al Maryah Island",
+                    "fullAddress": "21st Floor, Al Khatem Tower, ADGM Square, Al Maryah Island"
+                },
+                "dubai": {
+                    "city": "Dubai",
+                    "address": "Emaar Square",
+                    "fullAddress": "702, 7th Floor, Building Number 4"
+                },
+                "sharjah": {
+                    "city": "Sharjah",
+                    "address": "Al Durrah Tower - Al Majaz 3",
+                    "fullAddress": "Al Durrah Tower - Al Majaz 3 - Sharjah"
+                }
+            }
+        },
+        "contact": {
+            "badge": "Get In Touch",
+            "titlePrefix": "Let's Build the UAE's Future ",
+            "titleHighlight": "Digital Ecosystem",
+            "titleSuffix": " Together",
+            "description": "Partner with SlashData to transform your digital infrastructure. Our expert team is ready to discuss how our solutions can drive innovation and efficiency for your organization.",
+            "callUs": "Call Us",
+            "emailUs": "Email Us",
+            "form": {
+                "title": "Submit your inquiry",
+                "successMsg": "Thank you for your interest! We will contact you soon.",
+                "errorMsg": "There was an error submitting the form. Please try again.",
+                "nameLabel": "Full Name *",
+                "namePlaceholder": "Enter your name",
+                "emailLabel": "Email Address *",
+                "emailPlaceholder": "your@email.com",
+                "phoneLabel": "Phone Number",
+                "phonePlaceholder": "+971 xxx xxxx",
+                "messageLabel": "Message *",
+                "messagePlaceholder": "Tell us about your project or inquiry...",
+                "submit": "Send Message",
+                "submitting": "Sending..."
+            }
+        },
+        "solutionsPage": {
+            "backToHome": "Back to Home",
+            "header": {
+                "badge": "Our Solutions",
+                "titlePrefix": "Digital Solutions for a ",
+                "titleHighlight": "Connected Future",
+                "subtitle": "Empowering government entities and private sector partners with cutting-edge platforms that drive digital transformation across the UAE"
+            },
+            "cta": {
+                "titlePrefix": "Ready to Transform Your ",
+                "titleHighlight": "Digital Infrastructure?",
+                "subtitle": "Partner with SlashData to implement cutting-edge solutions that drive innovation and efficiency"
+            }
+        },
+        "pressNews": {
+            "header": {
+                "badge": "LATEST UPDATES",
+                "titlePrefix": "Press & ",
+                "titleHighlight": "News",
+                "subtitle": "Stay updated with the latest insights, innovations, and success stories from SlashData"
+            },
+            "cta": {
+                "titlePrefix": "Want to Learn More About ",
+                "titleHighlight": "Our Solutions?",
+                "subtitle": "Get in touch with our team to discover how SlashData can transform your digital services and drive innovation across your organization.",
+                "call": "Call 800-73282",
+                "backToHome": "Back to Home"
+            },
+            "articleDetail": {
+                "back": "Back to News",
+                "readMore": "Read More"
+            }
+        }
+    }
+}

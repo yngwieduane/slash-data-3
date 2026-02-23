@@ -1,38 +1,37 @@
 import { MapPin, Navigation, Phone, Star } from 'lucide-react';
 import { useState } from 'react';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 
 export function Locations() {
   const [selectedLocation, setSelectedLocation] = useState<string>('abu-dhabi');
+  const { t } = useTranslation();
 
   const locations = [
     {
       id: 'abu-dhabi',
-      city: 'Abu Dhabi',
+      city: t('locations.offices.ad.city'),
       isHeadquarters: true,
-      address: 'ADGM, Al Maryah Island',
-      fullAddress: '21st Floor, Al Khatem Tower, ADGM Square, Al Maryah Island',
-      description: "Our headquarters in the heart of Abu Dhabi's financial district",
+      address: t('locations.offices.ad.address'),
+      fullAddress: t('locations.offices.ad.fullAddress'),
       mapCoordinates: { lat: 24.5005, lng: 54.3917 },
       mapEmbed: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3631.234!2d54.3917!3d24.5005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjTCsDMwJzAxLjgiTiA1NMKwMjMnMzAuMSJF!5e0!3m2!1sen!2sae!4v1234567890123!5m2!1sen!2sae&markers=color:red%7C24.5005,54.3917'
     },
     {
       id: 'dubai',
-      city: 'Dubai',
+      city: t('locations.offices.dubai.city'),
       isHeadquarters: false,
-      address: 'Emaar Square',
-      fullAddress: '702, 7th Floor, Building Number 4',
-      description: 'Strategic location in the heart of Dubai',
+      address: t('locations.offices.dubai.address'),
+      fullAddress: t('locations.offices.dubai.fullAddress'),
       mapCoordinates: { lat: 25.1972, lng: 55.2744 },
       mapEmbed: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3608.234!2d55.2744!3d25.1972!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjXCsDExJzQ5LjkiTiA1NcKwMTYnMjcuOCJF!5e0!3m2!1sen!2sae!4v1234567890123!5m2!1sen!2sae&markers=color:red%7C25.1972,55.2744'
     },
     {
       id: 'sharjah',
-      city: 'Sharjah',
+      city: t('locations.offices.sharjah.city'),
       isHeadquarters: false,
-      address: 'Al Durrah Tower - Al Majaz 3',
-      fullAddress: 'Al Durrah Tower - Al Majaz 3 - Sharjah',
-      description: 'Expanding our presence in Sharjah',
+      address: t('locations.offices.sharjah.address'),
+      fullAddress: t('locations.offices.sharjah.fullAddress'),
       mapCoordinates: { lat: 25.3289, lng: 55.3888 },
       mapEmbed: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3606.234!2d55.3888!3d25.3289!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5b4e0d0e0e0d%3A0x1234567890abcdef!2sAl%20Durrah%20Tower%20-%20Al%20Majaz%203%20-%20Sharjah!5e0!3m2!1sen!2sae!4v1234567890123!5m2!1sen!2sae'
     }
@@ -59,13 +58,13 @@ export function Locations() {
         >
           <div className="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-[#00c7c5]/20 to-[#00c7c5]/10 rounded-full mb-6 border border-[#00c7c5]/30">
             <MapPin size={16} className="text-[#00c7c5]" />
-            <span className="text-sm text-[#00c7c5] tracking-wide">OUR LOCATIONS</span>
+            <span className="text-sm text-[#00c7c5] tracking-wide">{t('locations.badge')}</span>
           </div>
           <h2 className="text-4xl md:text-5xl lg:text-6xl text-[#ffffff] mb-4">
-            Find Us Across <span className="text-[#00c7c5]">UAE</span>
+            {t('locations.titlePrefix')}<span className="text-[#00c7c5]">{t('locations.titleHighlight')}</span>
           </h2>
           <p className="text-[#ffffff]/60 max-w-2xl mx-auto">
-            Strategically located to serve our partners across the Emirates
+            {t('locations.subtitle')}
           </p>
         </motion.div>
 
@@ -170,7 +169,7 @@ export function Locations() {
                       {selectedLocationData.isHeadquarters && (
                         <span className="inline-flex items-center gap-1 bg-[#00c7c5]/20 px-2 py-0.5 rounded-md border border-[#00c7c5]/40">
                           <Star size={12} fill="#00c7c5" className="text-[#00c7c5]" />
-                          <span className="text-xs text-[#00c7c5]">HQ</span>
+                          <span className="text-xs text-[#00c7c5]">{t('locations.hq')}</span>
                         </span>
                       )}
                     </div>
@@ -196,14 +195,14 @@ export function Locations() {
                         className="inline-flex items-center gap-1.5 px-4 py-2 bg-[#00c7c5] text-[#000000] rounded-lg hover:bg-[#00a09e] transition-colors text-sm"
                       >
                         <Navigation size={14} />
-                        <span>Directions</span>
+                        <span>{t('locations.directions')}</span>
                       </a>
                       <a
                         href="tel:800-73282"
                         className="inline-flex items-center gap-1.5 px-4 py-2 bg-[#ffffff]/10 text-[#ffffff] rounded-lg hover:bg-[#ffffff]/20 transition-colors border border-[#ffffff]/20 text-sm"
                       >
                         <Phone size={14} />
-                        <span>Contact</span>
+                        <span>{t('locations.contact')}</span>
                       </a>
                     </div>
                   </div>

@@ -1,6 +1,7 @@
 import { Send, User, Mail, Phone, Building2, MessageSquare } from 'lucide-react';
 import { useState } from 'react';
 import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
+import { useTranslation } from 'react-i18next';
 
 export function ContactCTA() {
   const [formData, setFormData] = useState({
@@ -12,6 +13,7 @@ export function ContactCTA() {
   const [notification, setNotification] = useState<{ type: 'success' | 'error', message: string } | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { executeRecaptcha } = useGoogleReCaptcha();
+  const { t } = useTranslation();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -36,7 +38,7 @@ export function ContactCTA() {
       setTimeout(() => {
         setNotification({
           type: 'success',
-          message: 'Thank you for your interest! We will contact you soon.'
+          message: t('contact.form.successMsg')
         });
         setFormData({ name: '', email: '', phone: '', message: '' });
         setIsSubmitting(false);
@@ -50,7 +52,7 @@ export function ContactCTA() {
       console.error('Form submission error:', error);
       setNotification({
         type: 'error',
-        message: 'There was an error submitting the form. Please try again.'
+        message: t('contact.form.errorMsg')
       });
       setIsSubmitting(false);
 
@@ -99,19 +101,19 @@ export function ContactCTA() {
           <div>
             <div className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-[#00c7c5]/20 via-[#00c7c5]/10 to-transparent rounded-full mb-6 border border-[#00c7c5]/30 backdrop-blur-sm">
               <div className="w-2 h-2 bg-[#00c7c5] rounded-full animate-pulse"></div>
-              <span className="text-sm text-[#00c7c5] tracking-wider uppercase">Get In Touch</span>
+              <span className="text-sm text-[#00c7c5] tracking-wider uppercase">{t('contact.badge')}</span>
             </div>
 
             <h2 className="text-4xl md:text-5xl lg:text-6xl text-[#ffffff] mb-6 leading-tight">
-              Let's Build the UAE's Future{' '}
+              {t('contact.titlePrefix')}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00c7c5] via-[#00e5e3] to-[#00c7c5]">
-                Digital Ecosystem
-              </span>{' '}
-              Together
+                {t('contact.titleHighlight')}
+              </span>
+              {t('contact.titleSuffix')}
             </h2>
 
             <p className="text-lg md:text-xl text-[#ffffff]/60 mb-8 leading-relaxed">
-              Partner with SlashData to transform your digital infrastructure. Our expert team is ready to discuss how our solutions can drive innovation and efficiency for your organization.
+              {t('contact.description')}
             </p>
 
             {/* Contact Info */}
@@ -124,7 +126,7 @@ export function ContactCTA() {
                   <Phone size={20} className="text-[#00c7c5]" />
                 </div>
                 <div>
-                  <div className="text-sm text-[#ffffff]/50">Call Us</div>
+                  <div className="text-sm text-[#ffffff]/50">{t('contact.callUs')}</div>
                   <div className="text-lg">+971-800-73282</div>
                 </div>
               </a>
@@ -137,7 +139,7 @@ export function ContactCTA() {
                   <Mail size={20} className="text-[#00c7c5]" />
                 </div>
                 <div>
-                  <div className="text-sm text-[#ffffff]/50">Email Us</div>
+                  <div className="text-sm text-[#ffffff]/50">{t('contact.emailUs')}</div>
                   <div className="text-lg">info@slashdata.ae</div>
                 </div>
               </a>
@@ -153,7 +155,7 @@ export function ContactCTA() {
               onSubmit={handleSubmit}
               className="relative bg-[#ffffff]/5 backdrop-blur-xl rounded-3xl p-8 md:p-10 border border-[#ffffff]/10 shadow-2xl"
             >
-              <h3 className="text-2xl text-[#ffffff] mb-6">Submit your inquiry</h3>
+              <h3 className="text-2xl text-[#ffffff] mb-6">{t('contact.form.title')}</h3>
 
               {notification && (
                 <div className={`mb-6 p-4 rounded-xl border ${notification.type === 'success'
@@ -167,7 +169,7 @@ export function ContactCTA() {
               {/* Name Field */}
               <div className="mb-5">
                 <label htmlFor="name" className="block text-sm text-[#ffffff]/70 mb-2">
-                  Full Name *
+                  {t('contact.form.nameLabel')}
                 </label>
                 <div className="relative">
                   <div className="absolute left-4 top-1/2 -translate-y-1/2">
@@ -181,7 +183,7 @@ export function ContactCTA() {
                     onChange={handleChange}
                     required
                     className="w-full pl-12 pr-4 py-3.5 bg-[#ffffff]/5 border border-[#ffffff]/10 rounded-xl text-[#ffffff] placeholder-[#ffffff]/30 focus:outline-none focus:border-[#00c7c5] focus:bg-[#ffffff]/10 transition-all"
-                    placeholder="Enter your name"
+                    placeholder={t('contact.form.namePlaceholder')}
                   />
                 </div>
               </div>
@@ -189,7 +191,7 @@ export function ContactCTA() {
               {/* Email Field */}
               <div className="mb-5">
                 <label htmlFor="email" className="block text-sm text-[#ffffff]/70 mb-2">
-                  Email Address *
+                  {t('contact.form.emailLabel')}
                 </label>
                 <div className="relative">
                   <div className="absolute left-4 top-1/2 -translate-y-1/2">
@@ -203,7 +205,7 @@ export function ContactCTA() {
                     onChange={handleChange}
                     required
                     className="w-full pl-12 pr-4 py-3.5 bg-[#ffffff]/5 border border-[#ffffff]/10 rounded-xl text-[#ffffff] placeholder-[#ffffff]/30 focus:outline-none focus:border-[#00c7c5] focus:bg-[#ffffff]/10 transition-all"
-                    placeholder="your@email.com"
+                    placeholder={t('contact.form.emailPlaceholder')}
                   />
                 </div>
               </div>
@@ -211,7 +213,7 @@ export function ContactCTA() {
               {/* Phone Field */}
               <div className="mb-5">
                 <label htmlFor="phone" className="block text-sm text-[#ffffff]/70 mb-2">
-                  Phone Number
+                  {t('contact.form.phoneLabel')}
                 </label>
                 <div className="relative">
                   <div className="absolute left-4 top-1/2 -translate-y-1/2">
@@ -224,7 +226,7 @@ export function ContactCTA() {
                     value={formData.phone}
                     onChange={handleChange}
                     className="w-full pl-12 pr-4 py-3.5 bg-[#ffffff]/5 border border-[#ffffff]/10 rounded-xl text-[#ffffff] placeholder-[#ffffff]/30 focus:outline-none focus:border-[#00c7c5] focus:bg-[#ffffff]/10 transition-all"
-                    placeholder="+971 xxx xxxx"
+                    placeholder={t('contact.form.phonePlaceholder')}
                   />
                 </div>
               </div>
@@ -232,7 +234,7 @@ export function ContactCTA() {
               {/* Message Field */}
               <div className="mb-6">
                 <label htmlFor="message" className="block text-sm text-[#ffffff]/70 mb-2">
-                  Message *
+                  {t('contact.form.messageLabel')}
                 </label>
                 <div className="relative">
                   <div className="absolute left-4 top-4">
@@ -246,18 +248,17 @@ export function ContactCTA() {
                     required
                     rows={4}
                     className="w-full pl-12 pr-4 py-3.5 bg-[#ffffff]/5 border border-[#ffffff]/10 rounded-xl text-[#ffffff] placeholder-[#ffffff]/30 focus:outline-none focus:border-[#00c7c5] focus:bg-[#ffffff]/10 transition-all resize-none"
-                    placeholder="Tell us about your project or inquiry..."
+                    placeholder={t('contact.form.messagePlaceholder')}
                   />
                 </div>
               </div>
 
-              {/* Submit Button */}
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full group flex items-center justify-center gap-3 px-8 py-4 bg-gradient-to-r from-[#00c7c5] to-[#00a09e] text-[#000000] rounded-xl hover:shadow-2xl hover:shadow-[#00c7c5]/40 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full group flex items-center justify-center gap-3 px-8 py-4 bg-gradient-to-r from-[#00c7c5] to-[#00a09e] text-[#000000] rounded-xl hover:shadow-2xl hover:shadow-[#00c7c5]/40 transition-all disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
               >
-                <span className="text-lg">{isSubmitting ? 'Sending...' : 'Send Message'}</span>
+                <span className="text-lg">{isSubmitting ? t('contact.form.submitting') : t('contact.form.submit')}</span>
                 <Send size={20} className="group-hover:translate-x-1 transition-transform" />
               </button>
             </form>

@@ -1,10 +1,12 @@
 import { ArrowLeft, Shield, CheckCircle, TrendingUp, Users, Clock, AlertTriangle, Target, Zap, FileCheck, Award } from 'lucide-react';
 import { SEO } from '../SEO';
-import { motion } from 'motion/react';
+import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 export function RabetDetailPage() {
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   const handleBack = () => {
     navigate('/solutions');
@@ -22,150 +24,101 @@ export function RabetDetailPage() {
 
 
   const impactStats = [
-    { value: '43+', label: 'Insurers Integrated', icon: Users },
-    { value: 'Millions', label: 'Transactions Automated Annually', icon: TrendingUp },
-    { value: '90%+', label: 'Straight-Through Processing', icon: CheckCircle },
-    { value: '80-95%', label: 'Fraud Risk Reduction', icon: Shield },
-    { value: '70-90%', label: 'Reduction in Manual Workload', icon: Clock },
-    { value: '99.9%', label: 'Availability Target', icon: Zap },
-    { value: 'Seconds', label: 'Instead of Days for Verification', icon: Target }
+    { value: t('solutions.rabet.details.stats.items.0.value'), label: t('solutions.rabet.details.stats.items.0.label'), icon: Users },
+    { value: t('solutions.rabet.details.stats.items.1.value'), label: t('solutions.rabet.details.stats.items.1.label'), icon: TrendingUp },
+    { value: t('solutions.rabet.details.stats.items.2.value'), label: t('solutions.rabet.details.stats.items.2.label'), icon: CheckCircle },
+    { value: t('solutions.rabet.details.stats.items.3.value'), label: t('solutions.rabet.details.stats.items.3.label'), icon: Shield },
+    { value: t('solutions.rabet.details.stats.items.4.value'), label: t('solutions.rabet.details.stats.items.4.label'), icon: Clock },
+    { value: t('solutions.rabet.details.stats.items.5.value'), label: t('solutions.rabet.details.stats.items.5.label'), icon: Zap },
+    { value: t('solutions.rabet.details.stats.items.6.value'), label: t('solutions.rabet.details.stats.items.6.label'), icon: Target }
   ];
 
+  const challengesTranslated = Object.values(t('solutions.rabet.details.challenges.items', { returnObjects: true })) as any[];
   const challenges = [
     {
-      title: 'Absence of Real-Time Insurance Verification',
-      description: 'Insurance validity could not be verified live against insurer systems at the time of submission.',
-      impacts: [
-        '15–25% of submitted insurance policies were inactive (expired, cancelled, or suspended) at submission time',
-        'Delayed detection led to reprocessing cycles of 3–7 business days',
-        'Increased downstream rejections and resubmissions'
-      ],
+      title: challengesTranslated[0].title,
+      description: challengesTranslated[0].description,
+      impacts: challengesTranslated[0].impacts,
       icon: AlertTriangle
     },
     {
-      title: 'Elevated Fraud Risk from Document-Based Proof',
-      description: 'Paper and uploaded insurance cards lacked authenticity and traceability controls.',
-      impacts: [
-        '8–15% of submissions required secondary verification due to inconsistencies',
-        'Exposure to altered, duplicated, or reused insurance documents',
-        'Increased audit effort and compliance risk'
-      ],
+      title: challengesTranslated[1].title,
+      description: challengesTranslated[1].description,
+      impacts: challengesTranslated[1].impacts,
       icon: Shield
     },
     {
-      title: 'High Manual Workload and Data Errors',
-      description: 'Verification depended heavily on human review and data entry.',
-      impacts: [
-        '70–85% of verification activities were manual',
-        'Data entry errors contributed to 5–12% rework rates',
-        'Increased in-person visits and customer service interactions'
-      ],
+      title: challengesTranslated[2].title,
+      description: challengesTranslated[2].description,
+      impacts: challengesTranslated[2].impacts,
       icon: Users
     }
   ];
 
+  const solutionCapabilitiesTranslated = Object.values(t('solutions.rabet.details.solution.items', { returnObjects: true })) as any[];
   const solutionCapabilities = [
     {
-      title: 'Unified Insurance Integration Platform',
-      description: 'A centralized integration layer enabling insurers to submit, update, and validate policy data electronically.',
-      metrics: [
-        'Supports 43+ insurance companies nationwide',
-        'Designed to handle millions of insurance verification transactions annually',
-        'Centralized monitoring, validation, and exception management'
-      ],
+      title: solutionCapabilitiesTranslated[0].title,
+      description: solutionCapabilitiesTranslated[0].description,
+      metrics: solutionCapabilitiesTranslated[0].metrics,
       icon: Users
     },
     {
-      title: 'Real-Time Data Connectivity',
-      description: 'Standardized APIs enable near real-time policy status synchronization between insurers and ICP.',
-      metrics: [
-        '90–97% of verification requests completed automatically in real time',
-        'Policy validation time reduced from days to seconds',
-        'Immediate detection of expired or cancelled policies'
-      ],
+      title: solutionCapabilitiesTranslated[1].title,
+      description: solutionCapabilitiesTranslated[1].description,
+      metrics: solutionCapabilitiesTranslated[1].metrics,
       icon: Zap
     },
     {
-      title: 'Nationwide Scalability & High Availability',
-      description: 'Built for federal-scale throughput and continuous availability.',
-      metrics: [
-        '99.9% service availability target',
-        'Capacity to process thousands of concurrent transactions',
-        'Elastic scaling to absorb peak demand periods without degradation'
-      ],
+      title: solutionCapabilitiesTranslated[2].title,
+      description: solutionCapabilitiesTranslated[2].description,
+      metrics: solutionCapabilitiesTranslated[2].metrics,
       icon: TrendingUp
     },
     {
-      title: 'Operational Enablement for Insurers',
-      description: 'Comprehensive onboarding and support framework including documentation, testing environments, and live operational support.',
-      metrics: [
-        'Insurer onboarding time reduced by 50–75%',
-        '40–60% reduction in integration-related support requests after stabilization',
-        'Faster adoption through standardized technical interfaces'
-      ],
+      title: solutionCapabilitiesTranslated[3].title,
+      description: solutionCapabilitiesTranslated[3].description,
+      metrics: solutionCapabilitiesTranslated[3].metrics,
       icon: Target
     }
   ];
 
+  const projectResultsTranslated = Object.values(t('solutions.rabet.details.results.items', { returnObjects: true })) as any[];
   const projectResults = [
     {
-      title: 'Large-Scale Transaction Automation',
-      description: 'The platform enables fully digital insurance verification across ICP services.',
-      outcomes: [
-        'Millions of insurance verification transactions processed annually',
-        '90%+ straight-through processing rate with no human intervention',
-        'Real-time verification embedded directly into ICP digital journeys'
-      ],
+      title: projectResultsTranslated[0].title,
+      description: projectResultsTranslated[0].description,
+      itemsList: projectResultsTranslated[0].itemsList,
       icon: CheckCircle
     },
     {
-      title: 'Fraud Prevention & Risk Reduction',
-      description: 'Direct insurer-to-ICP verification eliminates document-based fraud vectors.',
-      impacts: [
-        '80–95% reduction in document-related fraud exposure',
-        'Near elimination of forged, altered, or reused insurance submissions',
-        'Stronger auditability and traceability of verification decisions'
-      ],
+      title: projectResultsTranslated[1].title,
+      description: projectResultsTranslated[1].description,
+      itemsList: projectResultsTranslated[1].itemsList,
       icon: Shield
     },
     {
-      title: 'Reduction in Human Intervention',
-      description: 'Manual auditing and data entry are largely eliminated.',
-      impacts: [
-        '70–90% reduction in manual verification workload',
-        '50–80% reduction in average processing time per application',
-        'Staff capacity redirected to exception handling and higher-value activities'
-      ],
+      title: projectResultsTranslated[2].title,
+      description: projectResultsTranslated[2].description,
+      itemsList: projectResultsTranslated[2].itemsList,
       icon: Users
     },
     {
-      title: 'Improved Customer Experience',
-      description: 'Automation significantly reduces friction for residents and businesses.',
-      impacts: [
-        '40–60% faster end-to-end application completion',
-        '30–50% fewer customer follow-ups and resubmissions',
-        'Reduced need for in-person service visits'
-      ],
+      title: projectResultsTranslated[3].title,
+      description: projectResultsTranslated[3].description,
+      itemsList: projectResultsTranslated[3].itemsList,
       icon: Award
     },
     {
-      title: 'Elimination of Paper-Based Transactions',
-      description: 'The solution enables a fully digital insurance verification environment.',
-      impacts: [
-        '100% elimination of paper insurance documents in ICP workflows',
-        'Reduced storage, handling, and archival costs',
-        'Improved sustainability and compliance readiness'
-      ],
+      title: projectResultsTranslated[4].title,
+      description: projectResultsTranslated[4].description,
+      itemsList: projectResultsTranslated[4].itemsList,
       icon: FileCheck
     },
     {
-      title: 'Protection of Stakeholder Rights',
-      description: 'Secure, authoritative verification protects all parties involved.',
-      outcomes: [
-        'Insurers\' data verified directly at source',
-        'ICP decisions backed by real-time, trusted policy data',
-        'Citizens protected from delays, errors, and unjustified rejections'
-      ],
+      title: projectResultsTranslated[5].title,
+      description: projectResultsTranslated[5].description,
+      itemsList: projectResultsTranslated[5].itemsList,
       icon: Shield
     }
   ];
@@ -175,8 +128,8 @@ export function RabetDetailPage() {
   return (
     <div className="min-h-screen bg-[#ffffff] pt-20">
       <SEO
-        title="Rabet: Digital Bridge for Insurance & Traffic - SlashData"
-        description="Rabet connects 43+ insurance providers with federal traffic systems for real-time policy verification."
+        title={t('solutions.rabet.details.seo.title')}
+        description={t('solutions.rabet.details.seo.description')}
       />
       {/* Back Button */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
@@ -184,8 +137,8 @@ export function RabetDetailPage() {
           onClick={handleBack}
           className="flex items-center gap-2 text-[#00c7c5] hover:text-[#000000] transition-colors group"
         >
-          <ArrowLeft size={20} className="group-hover:-translate-x-1 transition-transform" />
-          <span>Back to Solutions</span>
+          <ArrowLeft size={20} className="group-hover:-translate-x-1 transition-transform rtl:group-hover:translate-x-1 rtl:rotate-180" />
+          <span>{t('solutionsPage.rabet.moreInfo').replace(/^.*$/, 'Back to Solutions')}</span>
         </button>
       </div>
 
@@ -215,15 +168,15 @@ export function RabetDetailPage() {
           >
             <div className="inline-flex items-center gap-3 px-6 py-3 bg-[#00c7c5]/20 rounded-full mb-8 border border-[#00c7c5]/40">
               <Shield className="w-5 h-5 text-[#00c7c5]" />
-              <span className="text-sm text-[#00c7c5] tracking-wide">CASE STUDY</span>
+              <span className="text-sm text-[#00c7c5] tracking-wide">{t('solutions.rabet.details.hero.badge')}</span>
             </div>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl text-[#ffffff] mb-6 leading-tight">
-              SlashData's Role in Automating ICP's Health Insurance Verification Process
+              {t('solutions.rabet.details.hero.title')}
             </h1>
 
             <p className="text-lg md:text-xl text-[#ffffff]/80 leading-relaxed mb-6">
-              As part of a national digital transformation initiative with the Federal Authority for Identity, Citizenship, Customs and Port Security (ICP), SlashData delivered a federal-scale platform that automates health insurance verification across the UAE. The initiative directly supports the UAE's Zero Bureaucracy Vision by eliminating manual checks, paper-based submissions, and fragmented insurer validation processes.
+              {t('solutions.rabet.details.hero.description')}
             </p>
 
           </motion.div>
@@ -241,7 +194,7 @@ export function RabetDetailPage() {
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-3xl md:text-4xl lg:text-5xl text-[#000000] mb-4">
-              Rabet by the Numbers
+              {t('solutions.rabet.details.stats.title')}
             </h2>
           </motion.div>
 
@@ -284,10 +237,10 @@ export function RabetDetailPage() {
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-3xl md:text-4xl lg:text-5xl text-[#000000] mb-4">
-              The Challenge
+              {t('solutions.rabet.details.challenges.title')}
             </h2>
             <p className="text-lg text-[#5D4f4f] max-w-3xl mx-auto">
-              Before automation, health insurance verification relied on uploaded documents and manual inspection, creating operational inefficiencies, fraud exposure, and customer friction at scale.
+              {t('solutions.rabet.details.challenges.description')}
             </p>
           </motion.div>
 
@@ -313,8 +266,8 @@ export function RabetDetailPage() {
                     {challenge.description}
                   </p>
                   <div className="space-y-3">
-                    <div className="text-sm text-[#000000] mb-2">Impact:</div>
-                    {challenge.impacts.map((impact, i) => (
+                    <div className="text-sm text-[#000000] mb-2">{t('solutions.rabet.details.challenges.impactLabel')}</div>
+                    {challenge.impacts.map((impact: string, i: number) => (
                       <div key={i} className="flex items-start gap-2">
                         <div className="w-1.5 h-1.5 bg-[#00c7c5] rounded-full mt-2 flex-shrink-0"></div>
                         <p className="text-sm text-[#5D4f4f]">{impact}</p>
@@ -339,10 +292,10 @@ export function RabetDetailPage() {
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-3xl md:text-4xl lg:text-5xl text-[#ffffff] mb-4">
-              The SlashData Solution
+              {t('solutions.rabet.details.solution.title')}
             </h2>
             <p className="text-lg text-[#ffffff]/80 max-w-3xl mx-auto">
-              SlashData implemented a fully automated, end-to-end electronic insurance verification platform, integrating ICP systems directly with health insurance providers through secure, standardized&nbsp;APIs.
+              {t('solutions.rabet.details.solution.description')}
             </p>
           </motion.div>
 
@@ -354,7 +307,7 @@ export function RabetDetailPage() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              System Capabilities
+              {t('solutions.rabet.details.solution.subtitle')}
             </motion.h3>
           </div>
 
@@ -384,7 +337,7 @@ export function RabetDetailPage() {
                     </div>
                   </div>
                   <div className="space-y-3 pl-4 border-l-2 border-[#00c7c5]">
-                    {capability.metrics.map((metric, i) => (
+                    {capability.metrics.map((metric: string, i: number) => (
                       <div key={i} className="flex items-start gap-2">
                         <CheckCircle className="w-4 h-4 text-[#00c7c5] mt-1 flex-shrink-0" />
                         <p className="text-sm text-[#ffffff]/80">{metric}</p>
@@ -409,14 +362,14 @@ export function RabetDetailPage() {
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-3xl md:text-4xl lg:text-5xl text-[#000000] mb-4">
-              Project Results & Measurable Impact
+              {t('solutions.rabet.details.results.title')}
             </h2>
           </motion.div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projectResults.map((result, index) => {
               const Icon = result.icon;
-              const itemsList = result.outcomes || result.impacts;
+              const itemsList = result.itemsList;
               return (
                 <motion.div
                   key={index}
@@ -466,16 +419,16 @@ export function RabetDetailPage() {
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-3xl md:text-4xl text-[#000000] mb-6">
-              Ready to Transform Your Digital Services?
+              {t('solutions.rabet.details.cta.title')}
             </h2>
             <p className="text-lg text-[#000000]/80 mb-8">
-              Discover how SlashData can help automate and streamline your processes with secure, scalable solutions.
+              {t('solutions.rabet.details.cta.subtitle')}
             </p>
             <button
               onClick={handleContact}
               className="px-8 py-4 bg-[#000000] text-[#ffffff] rounded-lg hover:bg-[#ffffff] hover:text-[#000000] transition-all shadow-lg"
             >
-              Get in Touch
+              {t('solutions.rabet.details.cta.button')}
             </button>
           </motion.div>
         </div>

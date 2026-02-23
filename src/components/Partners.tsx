@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import icpLogo from 'figma:asset/71af8fcd537edae0f25a16837046d0dd0ab3b682.png';
 import itcLogo from 'figma:asset/709e49cedd48fabeab7c80b562d3a1afb26f813d.png';
 import pcfcLogo from 'figma:asset/40b4063f3062f670947d5afa0fbb5a2767be5b51.png';
@@ -18,83 +19,84 @@ import dubaiInsuranceLogo from 'figma:asset/7f54bba4dbbddb4d18ab5297dc49e8409b70
 export function Partners() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
+  const { t } = useTranslation();
 
   const allPartners = [
     {
       id: 1,
-      name: 'Federal Authority For Identity, Citizenship, Customs & Port Security (ICP)',
+      name: t('partners.list.icp'),
       logo: 'ICP',
       logoImage: icpLogo
     },
     {
       id: 2,
-      name: 'Abu Dhabi Police',
+      name: t('partners.list.adp'),
       logo: 'ADP',
       logoImage: abuDhabiPoliceLogo
     },
     {
       id: 15,
-      name: 'TAMM',
+      name: t('partners.list.tamm'),
       logo: 'TAMM',
       logoImage: tammLogo
     },
     {
       id: 3,
-      name: 'Integrated Transport Center',
+      name: t('partners.list.itc'),
       logo: 'ITC',
       logoImage: itcLogo
     },
     {
       id: 4,
-      name: 'Abu Dhabi Mobility',
+      name: t('partners.list.adm'),
       logo: 'ADM',
       logoImage: abuDhabiMobilityLogo
     },
     {
       id: 5,
-      name: 'The Ports, Customs and Free Zone Corporation (PCFC)',
+      name: t('partners.list.pcfc'),
       logo: 'PCFC',
       logoImage: pcfcLogo
     },
     {
       id: 8,
-      name: 'ADCB',
+      name: t('partners.list.adcb'),
       logo: 'ADCB',
       logoImage: adcbLogo
     },
     {
       id: 9,
-      name: 'Emirates NBD',
+      name: t('partners.list.enbd'),
       logo: 'Emirates NBD',
       logoImage: enbadLogo
     },
     {
       id: 10,
-      name: 'FAB',
+      name: t('partners.list.fab'),
       logo: 'FAB',
       logoImage: fabLogo
     },
     {
       id: 12,
-      name: 'ADNIC',
+      name: t('partners.list.adnic'),
       logo: 'ADNIC',
       logoImage: adnicLogo
     },
     {
       id: 13,
-      name: 'GIG',
+      name: t('partners.list.gig'),
       logo: 'GIG',
       logoImage: gigLogo
     },
     {
       id: 14,
-      name: 'Orient Insurance',
+      name: t('partners.list.orient'),
       logo: 'Orient Insurance',
       logoImage: orientLogo
     },
     {
       id: 16,
-      name: 'Dubai Insurance',
+      name: t('partners.list.dubaiIns'),
       logo: 'Dubai Insurance',
       logoImage: dubaiInsuranceLogo
     }
@@ -132,7 +134,7 @@ export function Partners() {
     <div id="partners" className="py-8 md:py-12 bg-[#ffffff]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <motion.div 
+        <motion.div
           className="text-center mb-12 md:mb-16"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -140,18 +142,18 @@ export function Partners() {
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
           <div className="inline-block px-4 py-2 bg-[#00c7c5]/10 rounded-full mb-4">
-            <span className="text-sm text-[#00c7c5]">OUR PARTNERS</span>
+            <span className="text-sm text-[#00c7c5]">{t('partners.badge')}</span>
           </div>
           <h2 className="text-3xl md:text-4xl lg:text-5xl text-[#000000] mb-4">
-            Trusted Partnerships
+            {t('partners.title')}
           </h2>
           <p className="text-lg md:text-xl text-[#5D4f4f] max-w-3xl mx-auto">
-            Collaborating with leading government entities and private sector organizations
+            {t('partners.subtitle')}
           </p>
         </motion.div>
 
         {/* Partners Slider */}
-        <motion.div 
+        <motion.div
           className="relative"
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -160,7 +162,7 @@ export function Partners() {
         >
           {/* Slider Container */}
           <div className="overflow-hidden">
-            <div 
+            <div
               className="flex transition-transform duration-700 ease-in-out"
               style={{ transform: `translateX(-${currentSlide * 100}%)` }}
             >
@@ -168,15 +170,15 @@ export function Partners() {
                 <div key={slideIndex} className="w-full flex-shrink-0">
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-6 px-2">
                     {slide.map((partner) => (
-                      <div 
+                      <div
                         key={partner.id}
                         className="bg-[#ffffff] rounded-xl p-6 border border-[#00c7c5]/20 hover:border-[#00c7c5] transition-all shadow-md hover:shadow-xl flex flex-col items-center justify-center min-h-[200px]"
                       >
                         <div className="flex-1 flex items-center justify-center mb-3 w-full">
                           {partner.logoImage ? (
-                            <img 
-                              src={partner.logoImage} 
-                              alt={partner.name} 
+                            <img
+                              src={partner.logoImage}
+                              alt={partner.name}
                               className="max-w-full max-h-[100px] object-contain"
                             />
                           ) : (
@@ -223,11 +225,10 @@ export function Partners() {
                 <button
                   key={index}
                   onClick={() => goToSlide(index)}
-                  className={`transition-all duration-300 ${
-                    index === currentSlide
+                  className={`transition-all duration-300 ${index === currentSlide
                       ? 'w-8 h-3 bg-[#00c7c5] rounded-full'
                       : 'w-3 h-3 bg-[#00c7c5]/30 rounded-full hover:bg-[#00c7c5]/50'
-                  }`}
+                    }`}
                   aria-label={`Go to partner slide ${index + 1}`}
                 />
               ))}

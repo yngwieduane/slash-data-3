@@ -1,7 +1,9 @@
 import { Menu, X } from 'lucide-react';
 import { useState } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import logo from 'figma:asset/40bcf5337697c295e9d9f127741dbf0d2e2726a2.png';
+import { LanguageSwitcher } from './LanguageSwitcher';
 
 interface HeaderProps {
   onNavigateHome?: () => void;
@@ -13,6 +15,7 @@ export function Header({ onNavigateHome, onNavigateToSolutions, onNavigateToPres
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
+  const { t } = useTranslation();
 
   const scrollToSection = (id: string) => {
     setIsMenuOpen(false);
@@ -51,32 +54,36 @@ export function Header({ onNavigateHome, onNavigateToSolutions, onNavigateToPres
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-8">
             <button onClick={() => scrollToSection('home')} className="text-[#000000] hover:text-[#00c7c5] transition-colors cursor-pointer">
-              Home
+              {t('nav.home')}
             </button>
             <button onClick={() => scrollToSection('about')} className="text-[#000000] hover:text-[#00c7c5] transition-colors cursor-pointer">
-              About Us
+              {t('nav.aboutUs')}
             </button>
             <Link to="/solutions" className="text-[#000000] hover:text-[#00c7c5] transition-colors cursor-pointer">
-              Solutions
+              {t('nav.solutions')}
             </Link>
             <Link to="/press-news" className="text-[#000000] hover:text-[#00c7c5] transition-colors cursor-pointer">
-              Press and News
+              {t('nav.pressAndNews')}
             </Link>
+            <LanguageSwitcher />
             <button
               onClick={() => scrollToSection('contact-form')}
               className="px-6 py-2 border border-[#00c7c5] text-[#00c7c5] rounded hover:bg-[#00c7c5]/10 transition-colors cursor-pointer"
             >
-              CONTACT US
+              {t('nav.contactUs')}
             </button>
           </nav>
 
           {/* Mobile Menu Button */}
-          <button
-            className="md:hidden p-2 text-[#000000] cursor-pointer"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-          >
-            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+          <div className="md:hidden flex items-center gap-4">
+            <LanguageSwitcher />
+            <button
+              className="p-2 text-[#000000] cursor-pointer"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+            >
+              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
         </div>
 
         {/* Mobile Navigation */}
@@ -84,22 +91,22 @@ export function Header({ onNavigateHome, onNavigateToSolutions, onNavigateToPres
           <div className="md:hidden py-4 border-t border-[#00c7c5]/20">
             <nav className="flex flex-col gap-4">
               <button onClick={() => scrollToSection('home')} className="text-[#000000] hover:text-[#00c7c5] transition-colors text-left cursor-pointer">
-                Home
+                {t('nav.home')}
               </button>
               <button onClick={() => scrollToSection('about')} className="text-[#000000] hover:text-[#00c7c5] transition-colors text-left cursor-pointer">
-                About Us
+                {t('nav.aboutUs')}
               </button>
               <Link to="/solutions" onClick={() => setIsMenuOpen(false)} className="text-[#000000] hover:text-[#00c7c5] transition-colors text-left cursor-pointer">
-                Solutions
+                {t('nav.solutions')}
               </Link>
               <Link to="/press-news" onClick={() => setIsMenuOpen(false)} className="text-[#000000] hover:text-[#00c7c5] transition-colors text-left cursor-pointer">
-                Press and News
+                {t('nav.pressAndNews')}
               </Link>
               <button
                 onClick={() => scrollToSection('contact-form')}
                 className="px-6 py-2 border border-[#00c7c5] text-[#00c7c5] rounded hover:bg-[#00c7c5]/10 transition-colors text-left cursor-pointer"
               >
-                CONTACT US
+                {t('nav.contactUs')}
               </button>
             </nav>
           </div>

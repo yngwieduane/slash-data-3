@@ -1,5 +1,6 @@
 import { Mail, Phone, MapPin, Linkedin, Instagram, Facebook } from 'lucide-react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import logo from 'figma:asset/5a7d94ad9217bc90ee31d3a7715a9f79b43fa965.png';
 
 interface FooterProps {
@@ -9,6 +10,7 @@ interface FooterProps {
 export function Footer({ onNavigate }: FooterProps) {
   const navigate = useNavigate();
   const location = useLocation();
+  const { t } = useTranslation();
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
     e.preventDefault();
@@ -32,40 +34,40 @@ export function Footer({ onNavigate }: FooterProps) {
           <div>
             <img src={logo} alt="SlashData" className="h-8 mb-4" />
             <p className="text-[#ffffff]/70 text-sm">
-              Leading UAE-based technology company powering intelligent digital governance
+              {t('footer.tagline')}
             </p>
           </div>
 
           <div>
-            <h4 className="mb-4 text-[#ffffff]">Quick Links</h4>
+            <h4 className="mb-4 text-[#ffffff]">{t('footer.quickLinks')}</h4>
             <ul className="space-y-2 text-sm text-[#ffffff]/70">
-              <li><a href="#about" className="hover:text-[#00c7c5] transition-colors" onClick={(e) => handleNavClick(e, 'about')}>About Us</a></li>
-              <li><a href="#solutions" className="hover:text-[#00c7c5] transition-colors" onClick={(e) => handleNavClick(e, 'solutions')}>Solutions</a></li>
+              <li><a href="#about" className="hover:text-[#00c7c5] transition-colors" onClick={(e) => handleNavClick(e, 'about')}>{t('nav.aboutUs')}</a></li>
+              <li><a href="#solutions" className="hover:text-[#00c7c5] transition-colors" onClick={(e) => handleNavClick(e, 'solutions')}>{t('nav.solutions')}</a></li>
               <li><a href="#partners" className="hover:text-[#00c7c5] transition-colors" onClick={(e) => handleNavClick(e, 'partners')}>Partners</a></li>
               <li><a href="#locations" className="hover:text-[#00c7c5] transition-colors" onClick={(e) => handleNavClick(e, 'locations')}>Locations</a></li>
             </ul>
           </div>
 
           <div>
-            <h4 className="mb-4 text-[#ffffff]">Our Offices</h4>
+            <h4 className="mb-4 text-[#ffffff]">{t('footer.ourOffices')}</h4>
             <ul className="space-y-2 text-sm text-[#ffffff]/70">
               <li className="flex items-start gap-2">
                 <MapPin size={16} className="mt-1 flex-shrink-0 text-[#00c7c5]" />
-                <span>Abu Dhabi: ADGM, Al Maryah Island</span>
+                <span>{t('footer.offices.ad')}</span>
               </li>
               <li className="flex items-start gap-2">
                 <MapPin size={16} className="mt-1 flex-shrink-0 text-[#00c7c5]" />
-                <span>Dubai: Emmar Square</span>
+                <span>{t('footer.offices.dubai')}</span>
               </li>
               <li className="flex items-start gap-2">
                 <MapPin size={16} className="mt-1 flex-shrink-0 text-[#00c7c5]" />
-                <span>Sharjah: Almajaz 3</span>
+                <span>{t('footer.offices.sharjah')}</span>
               </li>
             </ul>
           </div>
 
           <div>
-            <h4 className="mb-4 text-[#ffffff]">Connect With Us</h4>
+            <h4 className="mb-4 text-[#ffffff]">{t('footer.connectWithUs')}</h4>
             <div className="flex gap-4 mb-4">
               <a
                 href="https://www.linkedin.com/company/slashdatadigital/"
@@ -106,7 +108,7 @@ export function Footer({ onNavigate }: FooterProps) {
         </div>
 
         <div className="border-t border-[#00c7c5]/30 pt-8 text-center text-sm text-[#ffffff]/70">
-          <p>&copy; 2026 SlashData. All rights reserved. | Privacy Policy | Terms of Service</p>
+          <p>{t('footer.rights')}</p>
         </div>
       </div>
     </footer>

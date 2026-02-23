@@ -5,37 +5,39 @@ import sharyLaunchImage from './assets/c8e6b70914f752aa1a15c7e28d4542a079de5523.
 import bahriLaunchImage from './assets/54ae292a61905664f7aacdcd263faea8b2b77071.png';
 import icpHonorImage from './assets/547e1b616f0a080936e58b83e82981e848a456a9.png';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 export default function PressNews() {
   const navigate = useNavigate();
+  const { t } = useTranslation();
   const articles = [
     {
       id: 1,
-      title: "SlashData Launches Shary at Gitex 2025",
-      excerpt: "SlashData, in partnership with TAMM, Abu Dhabi Police and Integrated Transport Center, is excited to announce the launch of Shary during Gitex 2025, a new step toward smarter, more connected digital services.",
-      fullContent: "SlashData, a leading UAE-based technology company, has officially launched Shary at Gitex 2025, marking a significant milestone in digital transformation. This innovative platform, developed in partnership with TAMM, Abu Dhabi Police, and Integrated Transport Center, represents a new era of smarter, more connected digital services for the UAE. Shary aims to streamline government and private sector services, providing seamless integration and enhanced user experiences for citizens and residents across the Emirates.",
-      category: "Partnership",
-      date: "October, 2025",
+      title: t('blog.articles.gitex2025.title'),
+      excerpt: t('blog.articles.gitex2025.excerpt'),
+      fullContent: t('blog.articles.gitex2025.fullContent'),
+      category: t('blog.articles.gitex2025.category'),
+      date: t('blog.articles.gitex2025.date'),
       image: sharyLaunchImage,
       featured: true
     },
     {
       id: 2,
-      title: "SlashData is proud to partner with the Ports, Customs & Freezone corporation (PCFC)",
-      excerpt: "During Gitex Global 2025, and MOU was signed between Customs & Freezone corporation (PCFC) and SlashData Digital LLC to launch Bahri, the first platform that enables instant, secure and fully digital submission of vessel insurance policies",
-      fullContent: "At Gitex Global 2025, a landmark MOU was signed between the Ports, Customs & Freezone Corporation (PCFC) and SlashData Digital LLC. This partnership introduces Bahri, a groundbreaking platform that revolutionizes maritime operations by enabling instant, secure, and fully digital submission of vessel insurance policies. Bahri represents a significant advancement in port operations efficiency, eliminating paperwork and reducing processing times while maintaining the highest security standards. This collaboration demonstrates SlashData's commitment to digitizing critical infrastructure services across the UAE.",
-      category: "Partnership",
-      date: "October, 2025",
+      title: t('blog.articles.pcfc.title'),
+      excerpt: t('blog.articles.pcfc.excerpt'),
+      fullContent: t('blog.articles.pcfc.fullContent'),
+      category: t('blog.articles.pcfc.category'),
+      date: t('blog.articles.pcfc.date'),
       image: bahriLaunchImage,
       featured: false
     },
     {
       id: 3,
-      title: "Federal Authority for Identity, Citizenship, Customs & Port Security (ICP) Honors SlashData at GITEX 2024",
-      excerpt: "The honour highlights the exceptional collaboration between ICP and SlashData in automating various procedures and transactions for one of the authority's services through the Rabet. The electronic platform brings together over 43 insurance companies within a unified database, enabling the automation of health insurance verification for authority clients.",
-      fullContent: "SlashData received prestigious recognition from the Federal Authority for Identity, Citizenship, Customs & Port Security (ICP) at GITEX 2024. This honor acknowledges the exceptional collaboration between ICP and SlashData in automating critical procedures and transactions through the Rabet platform. The innovative electronic platform has successfully integrated over 43 insurance companies into a unified database, dramatically improving efficiency in health insurance verification for authority clients. This achievement demonstrates SlashData's capability to deliver large-scale digital transformation solutions that serve both government entities and the public sector.",
-      category: "Recognition",
-      date: "October, 2024",
+      title: t('blog.articles.icp.title'),
+      excerpt: t('blog.articles.icp.excerpt'),
+      fullContent: t('blog.articles.icp.fullContent'),
+      category: t('blog.articles.icp.category'),
+      date: t('blog.articles.icp.date'),
       image: icpHonorImage,
       featured: false
     }
@@ -64,13 +66,13 @@ export default function PressNews() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center">
             <div className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#00c7c5]/20 rounded-full mb-6 border border-[#00c7c5]/40">
-              <span className="text-sm text-[#00c7c5] tracking-wide">LATEST UPDATES</span>
+              <span className="text-sm text-[#00c7c5] tracking-wide">{t('pressNews.header.badge')}</span>
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl text-[#ffffff] mb-6">
-              Press & <span className="text-[#00c7c5]">News</span>
+              {t('pressNews.header.titlePrefix')}<span className="text-[#00c7c5]">{t('pressNews.header.titleHighlight')}</span>
             </h1>
             <p className="text-lg md:text-xl text-[#ffffff]/70 max-w-3xl mx-auto">
-              Stay updated with the latest insights, innovations, and success stories from SlashData
+              {t('pressNews.header.subtitle')}
             </p>
           </div>
         </div>
@@ -97,7 +99,7 @@ export default function PressNews() {
                     {article.featured && (
                       <div className="absolute top-3 left-3">
                         <span className="px-3 py-1 bg-[#00c7c5] text-[#000000] rounded-full text-xs">
-                          Featured
+                          {t('blog.featured')}
                         </span>
                       </div>
                     )}
@@ -129,8 +131,8 @@ export default function PressNews() {
                       className="flex items-center gap-2 text-[#00c7c5] hover:text-[#000000] transition-colors group/btn mt-auto cursor-pointer"
                       onClick={() => navigate(`/press-news/${article.id}`)}
                     >
-                      <span className="text-sm">Learn More</span>
-                      <ArrowRight size={16} className="group-hover/btn:translate-x-1 transition-transform" />
+                      <span className="text-sm">{t('pressNews.articleDetail.readMore')}</span>
+                      <ArrowRight size={16} className="group-hover/btn:translate-x-1 transition-transform rtl:group-hover/btn:-translate-x-1 rtl:rotate-180" />
                     </button>
                   </div>
                 </div>
@@ -158,10 +160,10 @@ export default function PressNews() {
 
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
           <h2 className="text-3xl md:text-4xl lg:text-5xl text-[#ffffff] mb-6">
-            Want to Learn More About <span className="text-[#00c7c5]">Our Solutions?</span>
+            {t('pressNews.cta.titlePrefix')} <span className="text-[#00c7c5]">{t('pressNews.cta.titleHighlight')}</span>
           </h2>
           <p className="text-lg md:text-xl text-[#ffffff]/70 mb-10 max-w-2xl mx-auto">
-            Get in touch with our team to discover how SlashData can transform your digital services and drive innovation across your organization.
+            {t('pressNews.cta.subtitle')}
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -170,7 +172,7 @@ export default function PressNews() {
               className="group px-8 py-4 bg-[#00c7c5] text-[#000000] rounded-lg hover:bg-[#ffffff] transition-all flex items-center gap-3 shadow-lg shadow-[#00c7c5]/30 cursor-pointer"
             >
               <Phone size={20} />
-              <span>Call 800-73282</span>
+              <span>{t('pressNews.cta.call')}</span>
             </a>
 
             <button
@@ -180,8 +182,8 @@ export default function PressNews() {
               }}
               className="group px-8 py-4 bg-[#ffffff]/10 text-[#ffffff] rounded-lg hover:bg-[#ffffff]/20 transition-all flex items-center gap-3 border border-[#ffffff]/20 cursor-pointer"
             >
-              <span>Back to Home</span>
-              <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+              <span>{t('pressNews.cta.backToHome')}</span>
+              <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform rtl:group-hover:-translate-x-1 rtl:rotate-180" />
             </button>
           </div>
         </div>

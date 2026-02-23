@@ -2,49 +2,51 @@ import { Shield, Building2, Car, CreditCard, ArrowRight, ArrowLeft, Phone, Mail,
 import { SEO } from './SEO';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 export function SolutionsPage({ onBack, onNavigateToWtheeq, onNavigateToRabetDetail, onNavigateToRhoonDetail, onNavigateToSharyDetail, onNavigateToWtheeqDetail }: any) {
   // Keeping props optional or unused for backward compat if needed, but primarily using navigate
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   const solutions = [
     {
       id: 1,
-      name: 'Rabet',
-      tagline: 'Health Insurance Integration',
+      name: t('solutions.rabet.name'),
+      tagline: t('solutions.rabet.tagline'),
       icon: Shield,
-      description: 'Real-time health insurance policy data uploads and validation to the Federal Authority For Identity, Citizenship, Customs & Port Security (ICP)',
+      description: t('solutions.rabet.description'),
       color: '#00c7c5',
       hasDetailPage: true,
       path: '/solutions/rabet/details'
     },
     {
       id: 2,
-      name: 'Rhoon',
-      tagline: 'Banking & Mortgage Gateway',
+      name: t('solutions.rhoon.name'),
+      tagline: t('solutions.rhoon.tagline'),
       icon: Car,
-      description: 'Gateway for 200+ banks/financial institutions to upload vehicle mortgage data to Federal Traffic and Licensing System',
+      description: t('solutions.rhoon.description'),
       color: '#00c7c5',
       hasDetailPage: true,
       path: '/solutions/rhoon/details'
     },
     {
       id: 3,
-      name: 'Wtheeq',
-      tagline: 'Car Insurance Validation',
+      name: t('solutions.wtheeq.name'),
+      tagline: t('solutions.wtheeq.tagline'),
       icon: FileText,
-      description: 'Real-time car insurance policy data uploads and validation to Federal Traffic and Licensing System',
+      description: t('solutions.wtheeq.description'),
       color: '#00c7c5',
       hasDetailPage: true,
       path: '/solutions/wtheeq/details' // Main Wtheeq page
     },
     {
       id: 4,
-      name: 'Shary',
-      tagline: 'Secure Vehicle Transfers',
+      name: t('solutions.shary.name'),
+      tagline: t('solutions.shary.tagline'),
       icon: CreditCard,
-      description: 'Escrow-based vehicle ownership transfer payment service with proof of delivery capability',
+      description: t('solutions.shary.description'),
       color: '#00c7c5',
       hasDetailPage: true,
       path: '/solutions/shary/details'
@@ -68,31 +70,30 @@ export function SolutionsPage({ onBack, onNavigateToWtheeq, onNavigateToRabetDet
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          {/* Back Button */}
           <button
             onClick={() => navigate('/')}
             className="group inline-flex items-center gap-2 px-5 py-2.5 bg-[#ffffff]/5 text-[#ffffff] rounded-xl hover:bg-[#ffffff]/10 transition-all border border-[#ffffff]/10 hover:border-[#00c7c5]/50 mb-8 cursor-pointer"
           >
-            <ArrowLeft size={18} className="group-hover:-translate-x-1 transition-transform" />
-            <span>Back to Home</span>
+            <ArrowLeft size={18} className="group-hover:-translate-x-1 transition-transform rtl:group-hover:translate-x-1 rtl:rotate-180" />
+            <span>{t('solutionsPage.backToHome')}</span>
           </button>
 
           {/* Header */}
           <div className="text-center max-w-4xl mx-auto">
             <div className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-[#00c7c5]/20 via-[#00c7c5]/10 to-transparent rounded-full mb-6 border border-[#00c7c5]/30 backdrop-blur-sm">
               <div className="w-2 h-2 bg-[#00c7c5] rounded-full animate-pulse"></div>
-              <span className="text-sm text-[#00c7c5] tracking-wider uppercase">Our Solutions</span>
+              <span className="text-sm text-[#00c7c5] tracking-wider uppercase">{t('solutionsPage.header.badge')}</span>
             </div>
 
             <h1 className="text-4xl md:text-5xl lg:text-7xl text-[#ffffff] mb-6 leading-tight">
-              Digital Solutions for a <br />
+              {t('solutionsPage.header.titlePrefix')} <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00c7c5] via-[#00e5e3] to-[#00c7c5]">
-                Connected Future
+                {t('solutionsPage.header.titleHighlight')}
               </span>
             </h1>
 
             <p className="text-lg md:text-xl text-[#ffffff]/60 leading-relaxed">
-              Empowering government entities and private sector partners with cutting-edge platforms that drive digital transformation across the UAE
+              {t('solutionsPage.header.subtitle')}
             </p>
           </div>
         </div>
@@ -194,7 +195,6 @@ export function SolutionsPage({ onBack, onNavigateToWtheeq, onNavigateToRabetDet
                         {solution.description}
                       </p>
 
-                      {/* CTA with Icon */}
                       <button
                         onClick={() => navigate(solution.path)}
                         className={`inline-flex items-center gap-3 px-6 py-3 rounded-xl transition-all duration-300 group/btn cursor-pointer ${isHovered
@@ -202,8 +202,8 @@ export function SolutionsPage({ onBack, onNavigateToWtheeq, onNavigateToRabetDet
                           : 'bg-[#f8f8f8] text-[#5D4f4f]'
                           }`}
                       >
-                        <span>Learn More</span>
-                        <ArrowRight size={18} className={`transition-transform duration-300 ${isHovered ? 'translate-x-1' : ''
+                        <span>{t('solutions.learnMore')}</span>
+                        <ArrowRight size={18} className={`transition-transform duration-300 rtl:rotate-180 ${isHovered ? 'translate-x-1 rtl:-translate-x-1' : ''
                           }`} />
                       </button>
                     </div>
@@ -226,11 +226,11 @@ export function SolutionsPage({ onBack, onNavigateToWtheeq, onNavigateToRabetDet
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center">
             <h2 className="text-3xl md:text-4xl lg:text-6xl text-[#ffffff] mb-6 leading-tight">
-              Ready to Transform Your <br />
-              <span className="text-[#00c7c5]">Digital Infrastructure?</span>
+              {t('solutionsPage.cta.titlePrefix')} <br />
+              <span className="text-[#00c7c5]">{t('solutionsPage.cta.titleHighlight')}</span>
             </h2>
             <p className="text-lg md:text-xl text-[#ffffff]/60 mb-10 max-w-2xl mx-auto">
-              Partner with SlashData to implement cutting-edge solutions that drive innovation and efficiency
+              {t('solutionsPage.cta.subtitle')}
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">

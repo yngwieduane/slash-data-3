@@ -1,10 +1,12 @@
 import { ArrowLeft, FileText, CheckCircle, TrendingUp, Users, Clock, AlertTriangle, Target, Zap, Database, Award, Shield } from 'lucide-react';
 import { SEO } from '../SEO';
-import { motion } from 'motion/react';
+import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 export function WtheeqDetailPage() {
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   const handleBack = () => {
     navigate('/solutions');
@@ -21,140 +23,94 @@ export function WtheeqDetailPage() {
   };
 
   const impactStats = [
-    { value: '38', label: 'Insurers Connected', icon: Users },
-    { value: 'Millions', label: 'Policy Transactions Synchronized Annually', icon: TrendingUp },
-    { value: '90%+', label: 'Real-Time Validation', icon: CheckCircle },
-    { value: '70-90%', label: 'Improvement in Data Quality', icon: Award },
-    { value: '99.9%', label: 'Availability Target', icon: Zap },
-    { value: 'Instant', label: 'Verification Instead of Delays', icon: Clock }
+    { value: t('solutions.wtheeq.details.stats.items.0.value'), label: t('solutions.wtheeq.details.stats.items.0.label'), icon: Users },
+    { value: t('solutions.wtheeq.details.stats.items.1.value'), label: t('solutions.wtheeq.details.stats.items.1.label'), icon: TrendingUp },
+    { value: t('solutions.wtheeq.details.stats.items.2.value'), label: t('solutions.wtheeq.details.stats.items.2.label'), icon: CheckCircle },
+    { value: t('solutions.wtheeq.details.stats.items.3.value'), label: t('solutions.wtheeq.details.stats.items.3.label'), icon: Award },
+    { value: t('solutions.wtheeq.details.stats.items.4.value'), label: t('solutions.wtheeq.details.stats.items.4.label'), icon: Zap },
+    { value: t('solutions.wtheeq.details.stats.items.5.value'), label: t('solutions.wtheeq.details.stats.items.5.label'), icon: Clock }
   ];
 
+  const challengesTranslated = Object.values(t('solutions.wtheeq.details.challenges.items', { returnObjects: true })) as any[];
   const challenges = [
     {
-      title: 'Data Quality and Compliance Risk at Scale',
-      description: 'Limited validation controls allowed inconsistent, incomplete, or delayed data submissions.',
-      impacts: [
-        '5–10% of uploaded policies required correction or reprocessing',
-        'Increased compliance risk during enforcement, registration, and renewal activities',
-        'Higher operational load for insurers and regulators during peak periods'
-      ],
+      title: challengesTranslated[0].title,
+      description: challengesTranslated[0].description,
+      impacts: challengesTranslated[0].impacts,
       icon: AlertTriangle
     },
     {
-      title: 'Scalability and Resilience Constraints',
-      description: 'Legacy architectures were not designed for sustained national growth.',
-      impacts: [
-        'Performance degradation during high-volume periods (renewals, peak registrations)',
-        'Increased maintenance effort to onboard new insurers or expand capacity',
-        'Limited ability to scale toward real-time, event-driven services'
-      ],
+      title: challengesTranslated[1].title,
+      description: challengesTranslated[1].description,
+      impacts: challengesTranslated[1].impacts,
       icon: Database
     },
     {
-      title: 'Fragmented and Inefficient User Experience',
-      description: 'Non-intuitive interfaces and semi-manual validation slowed operations.',
-      impacts: [
-        'Slower upload cycles and higher error rates',
-        'Increased reliance on support teams',
-        'Reduced operational efficiency for insurers managing tens of thousands of policies per year'
-      ],
+      title: challengesTranslated[2].title,
+      description: challengesTranslated[2].description,
+      impacts: challengesTranslated[2].impacts,
       icon: Users
     }
   ];
 
+  const solutionCapabilitiesTranslated = Object.values(t('solutions.wtheeq.details.solution.items', { returnObjects: true })) as any[];
   const solutionCapabilities = [
     {
-      title: 'Modern Digital Platform for Insurers',
-      description: 'A streamlined, intuitive interface enabling insurers to manage high-volume policy uploads with speed and confidence.',
-      metrics: [
-        '40–60% reduction in time required to submit and manage policy data',
-        'Lower error rates through guided workflows and built-in validation',
-        'Improved productivity across insurer operations handling hundreds of thousands of policies annually'
-      ],
+      title: solutionCapabilitiesTranslated[0].title,
+      description: solutionCapabilitiesTranslated[0].description,
+      metrics: solutionCapabilitiesTranslated[0].metrics,
       icon: Target
     },
     {
-      title: 'Real-Time Electronic Data Exchange',
-      description: 'API-based integration enables instant synchronization with federal traffic and licensing systems.',
-      metrics: [
-        '90–98% of policy records validated and synchronized in real time',
-        '50–80% reduction in service completion time for insurance-dependent processes',
-        'Elimination of batch delays and repetitive manual updates',
-        'Policy status available instantly for registration, renewal, and enforcement services'
-      ],
+      title: solutionCapabilitiesTranslated[1].title,
+      description: solutionCapabilitiesTranslated[1].description,
+      metrics: solutionCapabilitiesTranslated[1].metrics,
       icon: Zap
     },
     {
-      title: 'Scalable, National-Grade Infrastructure',
-      description: 'Built to support the full UAE insurance market and future growth.',
-      metrics: [
-        'Supports 38 insurance companies nationwide',
-        'Designed to process millions of insurance policy transactions annually',
-        '99.9% availability target, ensuring continuous operation for mission-critical services'
-      ],
+      title: solutionCapabilitiesTranslated[2].title,
+      description: solutionCapabilitiesTranslated[2].description,
+      metrics: solutionCapabilitiesTranslated[2].metrics,
       icon: Database
     },
     {
-      title: 'Comprehensive Onboarding and Support',
-      description: 'End-to-end enablement ensures rapid ecosystem adoption.',
-      metrics: [
-        '50–70% faster onboarding for new insurers',
-        'Reduced support dependency through documentation, monitoring, and real-time assistance',
-        'Faster stabilization and consistent performance across partners'
-      ],
+      title: solutionCapabilitiesTranslated[3].title,
+      description: solutionCapabilitiesTranslated[3].description,
+      metrics: solutionCapabilitiesTranslated[3].metrics,
       icon: Users
     }
   ];
 
+  const projectResultsTranslated = Object.values(t('solutions.wtheeq.details.results.items', { returnObjects: true })) as any[];
   const projectResults = [
     {
-      title: 'Real-Time Verification and Operational Acceleration',
-      description: 'Wtheeq transformed insurance verification into a real-time digital capability embedded directly into federal mobility services.',
-      outcomes: [
-        'Insurance verification completed in real time across registration, renewal, and enforcement workflows',
-        'Dramatic reduction in processing delays and service completion times',
-        'Improved customer experience through instant policy validation'
-      ],
+      title: projectResultsTranslated[0].title,
+      description: projectResultsTranslated[0].description,
+      outcomes: projectResultsTranslated[0].outcomes,
       icon: Zap
     },
     {
-      title: 'Improved Data Accuracy and Regulatory Compliance',
-      description: 'Automated validation and authoritative synchronization strengthened compliance.',
-      outcomes: [
-        '70–90% improvement in data quality and consistency',
-        'Stronger regulatory assurance through real-time validation',
-        'Reduced compliance risk across the insurance ecosystem'
-      ],
+      title: projectResultsTranslated[1].title,
+      description: projectResultsTranslated[1].description,
+      outcomes: projectResultsTranslated[1].outcomes,
       icon: CheckCircle
     },
     {
-      title: 'Operational Transparency and Insight',
-      description: 'Wtheeq introduced real-time dashboards for all stakeholders.',
-      outcomes: [
-        'Real-time visibility into policy submissions, validations, and exceptions',
-        'Proactive monitoring and faster issue resolution',
-        'Data-driven insights for continuous optimization'
-      ],
+      title: projectResultsTranslated[2].title,
+      description: projectResultsTranslated[2].description,
+      outcomes: projectResultsTranslated[2].outcomes,
       icon: Award
     },
     {
-      title: 'Tangible Product Value at National Scale',
-      description: 'Wtheeq functions as a core digital utility for the UAE mobility ecosystem.',
-      outcomes: [
-        'Supports millions of policy transactions annually',
-        'Enables seamless integration across 38 insurance providers',
-        'Provides mission-critical infrastructure for federal mobility services'
-      ],
+      title: projectResultsTranslated[3].title,
+      description: projectResultsTranslated[3].description,
+      outcomes: projectResultsTranslated[3].outcomes,
       icon: TrendingUp
     },
     {
-      title: 'Alignment with the UAE\'s National Vision',
-      description: 'Wtheeq directly advances the Zero Bureaucracy Vision, demonstrating how platform-based digital infrastructure can unlock scalable, high-impact government services.',
-      outcomes: [
-        'Eliminated manual steps and paper-based processes',
-        'Enabled fully digital, user-centric government services',
-        'Demonstrated scalable model for digital transformation'
-      ],
+      title: projectResultsTranslated[4].title,
+      description: projectResultsTranslated[4].description,
+      outcomes: projectResultsTranslated[4].outcomes,
       icon: Shield
     }
   ];
@@ -164,8 +120,8 @@ export function WtheeqDetailPage() {
   return (
     <div className="min-h-screen bg-[#ffffff] pt-20">
       <SEO
-        title="Wtheeq Case Study - SlashData"
-        description="Learn how SlashData powered Wtheeq, the UAE's real-time car insurance data backbone."
+        title={t('solutions.wtheeq.details.seo.title')}
+        description={t('solutions.wtheeq.details.seo.description')}
       />
       {/* Back Button */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
@@ -173,8 +129,8 @@ export function WtheeqDetailPage() {
           onClick={handleBack}
           className="flex items-center gap-2 text-[#00c7c5] hover:text-[#000000] transition-colors group"
         >
-          <ArrowLeft size={20} className="group-hover:-translate-x-1 transition-transform" />
-          <span>Back to Solutions</span>
+          <ArrowLeft size={20} className="group-hover:-translate-x-1 transition-transform rtl:group-hover:translate-x-1 rtl:rotate-180" />
+          <span>{t('solutionsPage.wtheeq.moreInfo').replace(/^.*$/, 'Back to Solutions')}</span>
         </button>
       </div>
 
@@ -204,19 +160,15 @@ export function WtheeqDetailPage() {
           >
             <div className="inline-flex items-center gap-3 px-6 py-3 bg-[#00c7c5]/20 rounded-full mb-8 border border-[#00c7c5]/40">
               <FileText className="w-5 h-5 text-[#00c7c5]" />
-              <span className="text-sm text-[#00c7c5] tracking-wide">CASE STUDY</span>
+              <span className="text-sm text-[#00c7c5] tracking-wide">{t('solutions.wtheeq.details.hero.badge')}</span>
             </div>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl text-[#ffffff] mb-6 leading-tight">
-              SlashData Powered Wtheeq The UAE's Real-Time Car Insurance Data Backbone for Federal Traffic & Licensing Systems
+              {t('solutions.wtheeq.details.hero.title')}
             </h1>
 
-            <p className="text-lg md:text-xl text-[#ffffff]/80 leading-relaxed mb-6">
-              SlashData played a strategic and execution-critical role in the design, development, and deployment of Wtheeq, a national digital platform that enables real-time car insurance data integration across the UAE's federal traffic and licensing ecosystem.
-            </p>
-
-            <p className="text-lg md:text-xl text-[#ffffff]/80 leading-relaxed">
-              Delivered in partnership with the Integrated Transport Centre (Abu Dhabi Mobility) and Abu Dhabi Police, Wtheeq serves as a foundational data layer for the UAE's mobility services—ensuring data accuracy, instant verification, regulatory compliance, and seamless service continuity. The initiative directly advances the UAE's Zero Bureaucracy Vision, enabling connected, user-centric, and fully digital government services.
+            <p className="text-lg md:text-xl text-[#ffffff]/80 leading-relaxed mb-6 whitespace-pre-line">
+              {t('solutions.wtheeq.details.hero.description')}
             </p>
           </motion.div>
         </div>
@@ -233,7 +185,7 @@ export function WtheeqDetailPage() {
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-3xl md:text-4xl lg:text-5xl text-[#000000] mb-4">
-              Wtheeq is Not Just a System — It is a National Insurance Data Backbone with the following Key Achievements
+              {t('solutions.wtheeq.details.stats.title')}
             </h2>
           </motion.div>
 
@@ -276,10 +228,10 @@ export function WtheeqDetailPage() {
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-3xl md:text-4xl lg:text-5xl text-[#000000] mb-4">
-              The Challenge
+              {t('solutions.wtheeq.details.challenges.title')}
             </h2>
             <p className="text-lg text-[#5D4f4f] max-w-3xl mx-auto">
-              Insurance policy uploads formed the core data bridge between insurance providers, Abu Dhabi Mobility, and Abu Dhabi Police. However, as transaction volumes grew and regulatory expectations increased, the existing model exposed structural limitations.
+              {t('solutions.wtheeq.details.challenges.description')}
             </p>
           </motion.div>
 
@@ -305,8 +257,8 @@ export function WtheeqDetailPage() {
                     {challenge.description}
                   </p>
                   <div className="space-y-3">
-                    <div className="text-sm text-[#000000] mb-2">Impact:</div>
-                    {challenge.impacts.map((impact, i) => (
+                    <div className="text-sm text-[#000000] mb-2">{t('solutions.wtheeq.details.challenges.impactLabel')}</div>
+                    {challenge.impacts.map((impact: string, i: number) => (
                       <div key={i} className="flex items-start gap-2">
                         <div className="w-1.5 h-1.5 bg-[#00c7c5] rounded-full mt-2 flex-shrink-0"></div>
                         <p className="text-sm text-[#5D4f4f]">{impact}</p>
@@ -331,10 +283,10 @@ export function WtheeqDetailPage() {
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-3xl md:text-4xl lg:text-5xl text-[#ffffff] mb-4">
-              The SlashData Solution
+              {t('solutions.wtheeq.details.solution.title')}
             </h2>
             <p className="text-lg text-[#ffffff]/80 max-w-3xl mx-auto">
-              Wtheeq, designed and implemented by SlashData in close partnership with Abu Dhabi Mobility and Abu Dhabi Police, is a modern, API-driven insurance data exchange platform purpose-built for national-scale operations. The platform enables secure, real-time electronic data exchange for the licensed insurance companies in the UAE, transforming insurance verification into a real-time, automated, and authoritative process.
+              {t('solutions.wtheeq.details.solution.description')}
             </p>
           </motion.div>
 
@@ -346,7 +298,7 @@ export function WtheeqDetailPage() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              Key Capabilities
+              {t('solutions.wtheeq.details.solution.subtitle')}
             </motion.h3>
           </div>
 
@@ -376,7 +328,7 @@ export function WtheeqDetailPage() {
                     </div>
                   </div>
                   <div className="space-y-3 pl-4 border-l-2 border-[#00c7c5]">
-                    {capability.metrics.map((metric, i) => (
+                    {capability.metrics.map((metric: string, i: number) => (
                       <div key={i} className="flex items-start gap-2">
                         <CheckCircle className="w-4 h-4 text-[#00c7c5] mt-1 flex-shrink-0" />
                         <p className="text-sm text-[#ffffff]/80">{metric}</p>
@@ -401,7 +353,7 @@ export function WtheeqDetailPage() {
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-3xl md:text-4xl lg:text-5xl text-[#000000] mb-4">
-              Key Achievements
+              {t('solutions.wtheeq.details.results.title')}
             </h2>
           </motion.div>
 
@@ -457,16 +409,16 @@ export function WtheeqDetailPage() {
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-3xl md:text-4xl text-[#000000] mb-6">
-              Ready to Transform Your Digital Services?
+              {t('solutions.wtheeq.details.cta.title')}
             </h2>
             <p className="text-lg text-[#000000]/80 mb-8">
-              Discover how SlashData can help automate and streamline your processes with secure, scalable solutions.
+              {t('solutions.wtheeq.details.cta.subtitle')}
             </p>
             <button
               onClick={handleContact}
               className="px-8 py-4 bg-[#000000] text-[#ffffff] rounded-lg hover:bg-[#ffffff] hover:text-[#000000] transition-all shadow-lg"
             >
-              Get in Touch
+              {t('solutions.wtheeq.details.cta.button')}
             </button>
           </motion.div>
         </div>

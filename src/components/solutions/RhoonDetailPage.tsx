@@ -1,10 +1,12 @@
 import { ArrowLeft, Car, CheckCircle, TrendingUp, Users, Clock, AlertTriangle, Target, Zap, FileCheck, Award, Database } from 'lucide-react';
 import { SEO } from '../SEO';
-import { motion } from 'motion/react';
+import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 export function RhoonDetailPage() {
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   const handleBack = () => {
     navigate('/solutions');
@@ -21,113 +23,82 @@ export function RhoonDetailPage() {
   };
 
   const impactStats = [
-    { value: '200+', label: 'Service Partners Nationwide', icon: Users },
-    { value: 'Millions', label: 'Transactions Automated Annually', icon: TrendingUp },
-    { value: '85-90%', label: 'Straight-Through Processing', icon: CheckCircle },
-    { value: '99.9%', label: 'Availability Target', icon: Zap },
-    { value: '50-70%', label: 'Reduction in Onboarding Time', icon: Clock },
-    { value: 'Minutes', label: 'Processing Time vs Legacy Delays', icon: Target }
+    { value: t('solutions.rhoon.details.stats.items.0.value'), label: t('solutions.rhoon.details.stats.items.0.label'), icon: Users },
+    { value: t('solutions.rhoon.details.stats.items.1.value'), label: t('solutions.rhoon.details.stats.items.1.label'), icon: TrendingUp },
+    { value: t('solutions.rhoon.details.stats.items.2.value'), label: t('solutions.rhoon.details.stats.items.2.label'), icon: CheckCircle },
+    { value: t('solutions.rhoon.details.stats.items.3.value'), label: t('solutions.rhoon.details.stats.items.3.label'), icon: Zap },
+    { value: t('solutions.rhoon.details.stats.items.4.value'), label: t('solutions.rhoon.details.stats.items.4.label'), icon: Clock },
+    { value: t('solutions.rhoon.details.stats.items.5.value'), label: t('solutions.rhoon.details.stats.items.5.label'), icon: Target }
   ];
 
+  const challengesTranslated = Object.values(t('solutions.rhoon.details.challenges.items', { returnObjects: true })) as any[];
   const challenges = [
     {
-      title: 'Automated, but Not Fully Streamlined End-to-End',
-      description: 'Automation existed, but workflows often relied on legacy dependencies (batch updates, inconsistent partner submission mechanisms, and manual exception handling).',
-      impacts: [
-        'Standard cases could progress, but exceptions frequently introduced delays of hours to days',
-        'High operational overhead to reconcile mismatched or incomplete records',
-        'Limited self-service tracking for partners in legacy flows'
-      ],
+      title: challengesTranslated[0].title,
+      description: challengesTranslated[0].description,
+      impacts: challengesTranslated[0].impacts,
       icon: AlertTriangle
     },
     {
-      title: 'Limited Monitoring, Control, and Operational Analytics',
-      description: 'The process lacked a centralized operational view across participating entities.',
-      impacts: [
-        'Limited real-time visibility into submission status and processing SLAs',
-        'Reactive exception management and delayed issue resolution',
-        'Minimal analytics to track partner activity, volumes, and turnaround performance'
-      ],
+      title: challengesTranslated[1].title,
+      description: challengesTranslated[1].description,
+      impacts: challengesTranslated[1].impacts,
       icon: Database
     },
     {
-      title: 'Non-Uniform Partner Onboarding and Support Needs',
-      description: 'Partners differed significantly in digital maturity and capabilities.',
-      impacts: [
-        'Uneven onboarding experience and variable integration quality',
-        'Higher support load due to different operating models',
-        'Difficulty standardizing data quality and performance across the ecosystem'
-      ],
+      title: challengesTranslated[2].title,
+      description: challengesTranslated[2].description,
+      impacts: challengesTranslated[2].impacts,
       icon: Users
     }
   ];
 
+  const solutionCapabilitiesTranslated = Object.values(t('solutions.rhoon.details.solution.items', { returnObjects: true })) as any[];
   const solutionCapabilities = [
     {
-      title: 'Unified Digital Mortgage Platform',
-      description: 'A centralized platform enabling Service Partners to submit, manage, and track vehicle mortgage data through standardized and secure workflows—built to support 170+ Service Partners across the UAE.',
-      metrics: [
-        '85–95% straight-through processing for clean submissions',
-        'Consistent workflows across partner types, with fewer exceptions escalated manually'
-      ],
+      title: solutionCapabilitiesTranslated[0].title,
+      description: solutionCapabilitiesTranslated[0].description,
+      metrics: solutionCapabilitiesTranslated[0].metrics,
       icon: Database
     },
     {
-      title: 'Electronic Data Exchange',
-      description: 'Secure system-to-system connectivity enabling automated data submission to Abu Dhabi Mobility and Abu Dhabi Police.',
-      metrics: [
-        'Processing cycles reduced from legacy delays to minutes for standard transactions',
-        'Faster resolution through structured validation and automated checks'
-      ],
+      title: solutionCapabilitiesTranslated[1].title,
+      description: solutionCapabilitiesTranslated[1].description,
+      metrics: solutionCapabilitiesTranslated[1].metrics,
       icon: Zap
     },
     {
-      title: 'Scalable National Infrastructure',
-      description: 'High-availability architecture designed for continuous operations at national scale.',
-      metrics: [
-        '99.9% availability target',
-        'Capacity to support thousands of concurrent submissions, aligned to large real-world vehicle activity volumes such as the 317,988 combined 2024 registrations across Abu Dhabi + Northern Emirates'
-      ],
+      title: solutionCapabilitiesTranslated[2].title,
+      description: solutionCapabilitiesTranslated[2].description,
+      metrics: solutionCapabilitiesTranslated[2].metrics,
       icon: TrendingUp
     },
     {
-      title: 'Inclusive Partner Enablement',
-      description: 'A dedicated web portal for entities without integration capabilities, plus dashboards and reporting tools providing real-time visibility into submissions and processing status.',
-      metrics: [
-        'Partner onboarding time reduced by 50–70% using standardized tooling and guided enablement',
-        'Improved partner experience through self-service submission and real-time tracking'
-      ],
+      title: solutionCapabilitiesTranslated[3].title,
+      description: solutionCapabilitiesTranslated[3].description,
+      metrics: solutionCapabilitiesTranslated[3].metrics,
       icon: Target
     }
   ];
 
+  const projectResultsTranslated = Object.values(t('solutions.rhoon.details.results.items', { returnObjects: true })) as any[];
   const projectResults = [
     {
-      title: 'Improved Data Accuracy and Reliability',
-      description: 'Automation and structured data exchange improved data integrity and reduced mismatches.',
-      outcomes: [
-        '60–80% reduction in data quality issues caused by inconsistent formats and exception-driven corrections',
-        'Improved synchronization reliability with Abu Dhabi Mobility and Abu Dhabi Police databases'
-      ],
+      title: projectResultsTranslated[0].title,
+      description: projectResultsTranslated[0].description,
+      outcomes: projectResultsTranslated[0].outcomes,
       icon: CheckCircle
     },
     {
-      title: 'Operational Insights and Reporting',
-      description: 'Built-in dashboards provide Abu Dhabi Mobility and Abu Dhabi Police with real-time oversight.',
-      outcomes: [
-        'Real-time visibility into submission volumes, processing status, exceptions, and partner activity',
-        'Proactive SLA monitoring and continuous optimization through analytics'
-      ],
+      title: projectResultsTranslated[1].title,
+      description: projectResultsTranslated[1].description,
+      outcomes: projectResultsTranslated[1].outcomes,
       icon: FileCheck
     },
     {
-      title: 'Alignment with National Vision',
-      description: 'The project contributes directly to the Effortless Customer Experience Program and supports the UAE\'s Zero Bureaucracy Vision by simplifying government-to-business interactions and improving customer satisfaction.',
-      outcomes: [
-        'Streamlined government-to-business interactions',
-        'Enhanced customer satisfaction through faster, more reliable service',
-        'Direct contribution to UAE\'s digital transformation goals'
-      ],
+      title: projectResultsTranslated[2].title,
+      description: projectResultsTranslated[2].description,
+      outcomes: projectResultsTranslated[2].outcomes,
       icon: Award
     }
   ];
@@ -137,8 +108,8 @@ export function RhoonDetailPage() {
   return (
     <div className="min-h-screen bg-[#ffffff] pt-20">
       <SEO
-        title="Rhoon: Vehicle Mortgage Data Platform - SlashData"
-        description="Rhoon streamlines vehicle mortgage data access and exchange for Abu Dhabi Mobility and Police."
+        title={t('solutions.rhoon.details.seo.title')}
+        description={t('solutions.rhoon.details.seo.description')}
       />
       {/* Back Button */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
@@ -146,8 +117,8 @@ export function RhoonDetailPage() {
           onClick={handleBack}
           className="flex items-center gap-2 text-[#00c7c5] hover:text-[#000000] transition-colors group"
         >
-          <ArrowLeft size={20} className="group-hover:-translate-x-1 transition-transform" />
-          <span>Back to Solutions</span>
+          <ArrowLeft size={20} className="group-hover:-translate-x-1 transition-transform rtl:group-hover:translate-x-1 rtl:rotate-180" />
+          <span>{t('solutionsPage.rhoon.moreInfo').replace(/^.*$/, 'Back to Solutions')}</span>
         </button>
       </div>
 
@@ -177,15 +148,15 @@ export function RhoonDetailPage() {
           >
             <div className="inline-flex items-center gap-3 px-6 py-3 bg-[#00c7c5]/20 rounded-full mb-8 border border-[#00c7c5]/40">
               <Car className="w-5 h-5 text-[#00c7c5]" />
-              <span className="text-sm text-[#00c7c5] tracking-wide">CASE STUDY</span>
+              <span className="text-sm text-[#00c7c5] tracking-wide">{t('solutions.rhoon.details.hero.badge')}</span>
             </div>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl text-[#ffffff] mb-6 leading-tight">
-              SlashData's Role in Streamlining Vehicle Mortgage Data Access with Rhoon
+              {t('solutions.rhoon.details.hero.title')}
             </h1>
 
             <p className="text-lg md:text-xl text-[#ffffff]/80 leading-relaxed">
-              Through a digital transformation project with the Integrated Transport Centre (Abu Dhabi Mobility) and Abu Dhabi Police, SlashData developed Rhoon—a modern platform that streamlines vehicle mortgage data access and exchange across the UAE. The initiative supports the Effortless Customer Experience Program and advances the UAE's Zero Bureaucracy Vision by improving speed, transparency, and service consistency for a large ecosystem of partners.
+              {t('solutions.rhoon.details.hero.description')}
             </p>
           </motion.div>
         </div>
@@ -202,7 +173,7 @@ export function RhoonDetailPage() {
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-3xl md:text-4xl lg:text-5xl text-[#000000] mb-4">
-              Summary Impact Snapshot with the following Key Achievements
+              {t('solutions.rhoon.details.stats.title')}
             </h2>
           </motion.div>
 
@@ -245,10 +216,10 @@ export function RhoonDetailPage() {
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-3xl md:text-4xl lg:text-5xl text-[#000000] mb-4">
-              The Challenge
+              {t('solutions.rhoon.details.challenges.title')}
             </h2>
             <p className="text-lg text-[#5D4f4f] max-w-3xl mx-auto">
-              The legacy process was already automated, but it was constrained by legacy-system limitations—including fragmented partner connectivity, inconsistent data formats, limited real-time visibility, and heavy exception handling. At national scale, these limitations become more visible: in 2024, vehicle registrations reached 213,284 in Abu Dhabi and 104,704 across the Northern Emirates (Sharjah, Ajman, Umm Al Quwain, Ras Al Khaimah, Fujairah)—a combined scale of 317,988 registrations that reflects the broader volume of vehicle-related activities the ecosystem must support.
+              {t('solutions.rhoon.details.challenges.description')}
             </p>
           </motion.div>
 
@@ -274,8 +245,8 @@ export function RhoonDetailPage() {
                     {challenge.description}
                   </p>
                   <div className="space-y-3">
-                    <div className="text-sm text-[#000000] mb-2">Impact:</div>
-                    {challenge.impacts.map((impact, i) => (
+                    <div className="text-sm text-[#000000] mb-2">{t('solutions.rhoon.details.challenges.impactLabel')}</div>
+                    {challenge.impacts.map((impact: string, i: number) => (
                       <div key={i} className="flex items-start gap-2">
                         <div className="w-1.5 h-1.5 bg-[#00c7c5] rounded-full mt-2 flex-shrink-0"></div>
                         <p className="text-sm text-[#5D4f4f]">{impact}</p>
@@ -300,10 +271,10 @@ export function RhoonDetailPage() {
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-3xl md:text-4xl lg:text-5xl text-[#ffffff] mb-4">
-              The SlashData Solution
+              {t('solutions.rhoon.details.solution.title')}
             </h2>
             <p className="text-lg text-[#ffffff]/80 max-w-3xl mx-auto">
-              Rhoon is a secure digital platform developed by SlashData in partnership with Abu Dhabi Mobility and Abu Dhabi Police, enabling electronic submission, validation, and exchange of vehicle mortgage data across a national partner network—including banks, financial institutions, car showrooms, government and semi-government entities, and trading companies.
+              {t('solutions.rhoon.details.solution.description')}
             </p>
           </motion.div>
 
@@ -315,7 +286,7 @@ export function RhoonDetailPage() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              Key Features
+              {t('solutions.rhoon.details.solution.subtitle')}
             </motion.h3>
           </div>
 
@@ -345,7 +316,7 @@ export function RhoonDetailPage() {
                     </div>
                   </div>
                   <div className="space-y-3 pl-4 border-l-2 border-[#00c7c5]">
-                    {capability.metrics.map((metric, i) => (
+                    {capability.metrics.map((metric: string, i: number) => (
                       <div key={i} className="flex items-start gap-2">
                         <CheckCircle className="w-4 h-4 text-[#00c7c5] mt-1 flex-shrink-0" />
                         <p className="text-sm text-[#ffffff]/80">{metric}</p>
@@ -370,7 +341,7 @@ export function RhoonDetailPage() {
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-3xl md:text-4xl lg:text-5xl text-[#000000] mb-4">
-              Project Results
+              {t('solutions.rhoon.details.results.title')}
             </h2>
           </motion.div>
 
@@ -426,16 +397,16 @@ export function RhoonDetailPage() {
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-3xl md:text-4xl text-[#000000] mb-6">
-              Ready to Transform Your Digital Services?
+              {t('solutions.rhoon.details.cta.title')}
             </h2>
             <p className="text-lg text-[#000000]/80 mb-8">
-              Discover how SlashData can help automate and streamline your processes with secure, scalable solutions.
+              {t('solutions.rhoon.details.cta.subtitle')}
             </p>
             <button
               onClick={handleContact}
               className="px-8 py-4 bg-[#000000] text-[#ffffff] rounded-lg hover:bg-[#ffffff] hover:text-[#000000] transition-all shadow-lg"
             >
-              Get in Touch
+              {t('solutions.rhoon.details.cta.button')}
             </button>
           </motion.div>
         </div>

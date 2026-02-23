@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { ArrowRight, Calendar, Tag, ChevronLeft, ChevronRight } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import sharyLaunchImage from '../assets/c8e6b70914f752aa1a15c7e28d4542a079de5523.jpeg';
 import bahriLaunchImage from '../assets/54ae292a61905664f7aacdcd263faea8b2b77071.png';
@@ -13,32 +14,33 @@ interface BlogNewsProps {
 export function BlogNews({ onNavigateToPressNews, onNavigateToArticle }: BlogNewsProps) {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
+  const { t } = useTranslation();
 
   const articles = [
     {
       id: 1,
-      title: "SlashData Launches Shary at Gitex 2025",
-      excerpt: "SlashData, in partnership with TAMM, Abu Dhabi Police and Integrated Transport Center, is excited to announce the launch of Shary during Gitex 2025, a new step toward smarter, more connected digital services.",
-      category: "Partnership",
-      date: "October, 2025",
+      title: t('blog.articles.gitex2025.title'),
+      excerpt: t('blog.articles.gitex2025.excerpt'),
+      category: t('blog.articles.gitex2025.category'),
+      date: t('blog.articles.gitex2025.date'),
       image: sharyLaunchImage,
       featured: true
     },
     {
       id: 2,
-      title: "SlashData is proud to partner with the Ports, Customs & Freezone corporation (PCFC)",
-      excerpt: "During Gitex Global 2025, and MOU was signed between Customs & Freezone corporation (PCFC) and SlashData Digital LLC to launch Bahri, the first platform that enables instant, secure and fully digital submission of vessel insurance policies",
-      category: "Partnership",
-      date: "October, 2025",
+      title: t('blog.articles.pcfc.title'),
+      excerpt: t('blog.articles.pcfc.excerpt'),
+      category: t('blog.articles.pcfc.category'),
+      date: t('blog.articles.pcfc.date'),
       image: bahriLaunchImage,
       featured: false
     },
     {
       id: 3,
-      title: "Federal Authority for Identity, Citizenship, Customs & Port Security (ICP) Honors SlashData at GITEX 2024",
-      excerpt: "The honour highlights the exceptional collaboration between ICP and SlashData in automating various procedures and transactions for one of the authority's services through the Rabet. The electronic platform brings together over 43 insurance companies within a unified database, enabling the automation of health insurance verification for authority clients.",
-      category: "Recognition",
-      date: "October, 2024",
+      title: t('blog.articles.icp.title'),
+      excerpt: t('blog.articles.icp.excerpt'),
+      category: t('blog.articles.icp.category'),
+      date: t('blog.articles.icp.date'),
       image: icpHonorImage,
       featured: false
     }
@@ -72,10 +74,10 @@ export function BlogNews({ onNavigateToPressNews, onNavigateToArticle }: BlogNew
         {/* Section Header */}
         <div className="text-center mb-12 md:mb-16">
           <h2 className="text-3xl md:text-4xl lg:text-5xl text-[#000000] mb-4">
-            Press & News
+            {t('blog.title')}
           </h2>
           <p className="text-lg md:text-xl text-[#5D4f4f] max-w-3xl mx-auto">
-            Stay updated with the latest insights, innovations, and success stories from SlashData
+            {t('blog.subtitle')}
           </p>
         </div>
 
@@ -106,7 +108,7 @@ export function BlogNews({ onNavigateToPressNews, onNavigateToArticle }: BlogNew
                           {article.featured && (
                             <div className="absolute top-4 left-4">
                               <span className="px-3 py-1 bg-[#00c7c5] text-[#000000] rounded-full text-xs">
-                                Featured
+                                {t('blog.featured')}
                               </span>
                             </div>
                           )}
@@ -135,7 +137,7 @@ export function BlogNews({ onNavigateToPressNews, onNavigateToArticle }: BlogNew
                           </p>
 
                           <button className="group/btn flex items-center gap-2 text-[#00c7c5] hover:gap-3 transition-all" onClick={() => onNavigateToArticle?.(article)}>
-                            Read More
+                            {t('blog.readMore')}
                             <ArrowRight size={18} className="group-hover/btn:translate-x-1 transition-transform" />
                           </button>
                         </div>
@@ -182,10 +184,10 @@ export function BlogNews({ onNavigateToPressNews, onNavigateToArticle }: BlogNew
         {/* View All Button */}
         <div className="text-center">
           <button
-            className="group px-6 md:px-8 py-3 md:py-4 bg-[#000000] text-[#ffffff] rounded-lg hover:bg-[#00c7c5] hover:text-[#000000] transition-all flex items-center gap-3 mx-auto"
+            className="group px-6 md:px-8 py-3 md:py-4 bg-[#000000] text-[#ffffff] rounded-lg hover:bg-[#00c7c5] hover:text-[#000000] transition-all flex items-center gap-3 mx-auto cursor-pointer"
             onClick={onNavigateToPressNews}
           >
-            View All Articles
+            {t('blog.viewAll')}
             <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
           </button>
         </div>
