@@ -675,7 +675,171 @@
             "shary": {
                 "name": "Shary",
                 "description": "Shary delivers end-to-end vehicle ownership transfers powered by a secure escrow account—protecting funds from start to finish and releasing payment only after verified handover, backed by full transparency and auditable records.",
-                "tagline": "Secure Vehicle Transfers"
+                "tagline": "Secure Vehicle Transfers",
+                "details": {
+                    "seo": {
+                        "title": "Shary: Digital Escrow Platform - SlashData",
+                        "description": "Shary requires dedicated escrow workflow for high-trust vehicle ownership transfers in Abu Dhabi."
+                    },
+                    "hero": {
+                        "badge": "CASE STUDY",
+                        "title": "SlashData Engineered Shary Abu Dhabi's Flagship Digital Escrow Platform for High-Trust Vehicle Ownership Transfers",
+                        "description": "SlashData played a foundational and central role in the design, engineering, and delivery of Shary, a first-of-its-kind government-integrated, escrow-based digital service that fundamentally transforms how individuals buy and sell vehicles in Abu Dhabi. Developed in collaboration with TAMM, Abu Dhabi Mobility (Integrated Transport Centre), and Abu Dhabi Police, Shary replaces a fragmented, high-risk, manual process with a secure, automated, end-to-end digital journey—embedding trust, financial protection, and regulatory assurance into every transaction."
+                    },
+                    "stats": {
+                        "title": "Trust Engineered Into the Platform Itself",
+                        "items": [
+                            {
+                                "value": "100K+",
+                                "label": "Transactions Enabled Annually"
+                            },
+                            {
+                                "value": "100%",
+                                "label": "Escrow-Protected Payments"
+                            },
+                            {
+                                "value": "90%+",
+                                "label": "Automation Across Transfer Steps"
+                            },
+                            {
+                                "value": "Minutes",
+                                "label": "Settlement Time vs Days"
+                            },
+                            {
+                                "value": "80-90%",
+                                "label": "Reduction in Disputes"
+                            },
+                            {
+                                "value": "Zero",
+                                "label": "Cash, Visits, Ambiguity"
+                            }
+                        ]
+                    },
+                    "challenges": {
+                        "title": "The Challenge",
+                        "description": "Traditional peer-to-peer vehicle sales operated in an environment of structural risk—with disconnected steps, limited guarantees, and no unified digital control over payment, handover, and ownership transfer.",
+                        "impactLabel": "Impact:",
+                        "items": [
+                            {
+                                "title": "Limited Transparency in High-Value Transactions",
+                                "description": "Buyers and sellers had no single source of truth for payment status, vehicle handover, or ownership transfer progression.",
+                                "impacts": [
+                                    "Thousands of annual transactions exposed to uncertainty and dispute risk",
+                                    "Heavy reliance on informal coordination, screenshots, and manual confirmation",
+                                    "Reduced confidence in peer-to-peer vehicle trading"
+                                ]
+                            },
+                            {
+                                "title": "Weak Financial Safeguards",
+                                "description": "Payments were often completed before ownership transfer or vehicle condition confirmation.",
+                                "impacts": [
+                                    "Buyers exposed to full financial loss risk",
+                                    "Sellers exposed to delayed or disputed payments",
+                                    "Authorities faced downstream complaints and dispute escalation",
+                                    "In a market where individual vehicle values routinely reach tens or hundreds of thousands of dirhams, the absence of escrow represented a critical systemic gap"
+                                ]
+                            },
+                            {
+                                "title": "Insufficient Verification and Auditability",
+                                "description": "There was no standardized digital proof of vehicle condition, delivery, or acceptance at the point of sale.",
+                                "impacts": [
+                                    "Limited regulatory assurance",
+                                    "Reduced transaction traceability",
+                                    "Challenging post-transaction dispute resolution"
+                                ]
+                            }
+                        ]
+                    },
+                    "solution": {
+                        "title": "The SlashData Solution",
+                        "description": "SlashData designed Shary as a mission-critical digital escrow platform, purpose-built to handle high-volume, high-value consumer transactions with government-grade security, resilience, and trust.",
+                        "subtitle": "Key Features",
+                        "items": [
+                            {
+                                "title": "Escrow-Based Digital Guarantee at Scale",
+                                "description": "Every Shary transaction is governed by a dedicated escrow workflow, ensuring funds are securely held until all predefined conditions are met.",
+                                "metrics": [
+                                    "100% payment protection across all Shary transactions",
+                                    "Tens of thousands of transactions per year executed with zero cash handling",
+                                    "Near elimination of payment-related disputes"
+                                ]
+                            },
+                            {
+                                "title": "Secure Banking Integration and Automated Settlement",
+                                "description": "Through deep integration with ADCB, buyer funds are deposited into escrow and automatically released only after successful vehicle acceptance and confirmed ownership transfer.",
+                                "metrics": [
+                                    "90–95% straight-through financial settlement with no manual intervention",
+                                    "Settlement cycles reduced from days to minutes after transfer confirmation",
+                                    "Dramatic reduction in fraud exposure and payment disputes"
+                                ]
+                            },
+                            {
+                                "title": "Verified Handover and Authoritative Ownership Transfer",
+                                "description": "Buyers digitally confirm receipt and vehicle condition within a defined acceptance window before ownership is transferred and funds are released.",
+                                "metrics": [
+                                    "End-to-end traceability for every transaction",
+                                    "Clear, time-stamped digital audit trail",
+                                    "Strong protection for both buyer and seller at every step"
+                                ]
+                            },
+                            {
+                                "title": "Fully Government-Integrated Digital Workflow via TAMM",
+                                "description": "Shary operates natively through TAMM, with direct integration into Abu Dhabi Mobility and Abu Dhabi Police systems.",
+                                "metrics": [
+                                    "Ownership updates completed authoritatively and instantly",
+                                    "Customers complete the entire journey digitally, without service center visits",
+                                    "Government entities manage tens of thousands of transactions annually with full visibility and control"
+                                ]
+                            }
+                        ]
+                    },
+                    "results": {
+                        "title": "Project Results & Transformational Impact",
+                        "items": [
+                            {
+                                "title": "A Step-Change in Trust and Market Confidence",
+                                "description": "By embedding escrow, verification, and government authority into one seamless flow, Shary transformed peer-to-peer vehicle sales into a high-trust, low-risk digital experience.",
+                                "outcomes": [
+                                    "80–90% reduction in transaction-related disputes",
+                                    "Strong increase in consumer confidence in digital vehicle trading",
+                                    "Clear, enforceable transaction rules for all parties"
+                                ]
+                            },
+                            {
+                                "title": "Digital, Secure, and Automated Transactions",
+                                "description": "Shary eliminated cash handling, fragmented steps, and informal coordination.",
+                                "outcomes": [
+                                    "90%+ of transactions completed fully digitally",
+                                    "70–85% reduction in manual follow-ups and exception handling",
+                                    "Significant reduction in fraud, chargebacks, and post-sale conflicts"
+                                ]
+                            },
+                            {
+                                "title": "Radically Improved Customer Experience",
+                                "description": "Customers can complete the full sale and transfer journey digitally—from listing to payment release—without visiting service centers.",
+                                "outcomes": [
+                                    "50–70% reduction in end-to-end transaction time",
+                                    "Zero physical visits for standard cases",
+                                    "Higher satisfaction across buyers and sellers"
+                                ]
+                            },
+                            {
+                                "title": "Direct Contribution to Government Vision",
+                                "description": "Shary directly advances the Effortless Customer Experience and Zero Bureaucracy initiatives by eliminating manual steps, removing paperwork, and enabling seamless collaboration between TAMM, Abu Dhabi Mobility, Abu Dhabi Police, and financial institutions.",
+                                "outcomes": [
+                                    "Eliminated manual steps and paperwork",
+                                    "Enabled seamless cross-entity collaboration",
+                                    "Aligned with UAE's digital transformation goals"
+                                ]
+                            }
+                        ]
+                    },
+                    "cta": {
+                        "title": "Ready to Transform Your Digital Services?",
+                        "subtitle": "Discover how SlashData can help automate and streamline your processes with secure, scalable solutions.",
+                        "button": "Get in Touch"
+                    }
+                }
             }
         },
         "partners": {

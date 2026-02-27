@@ -127,7 +127,7 @@ export function ContactCTA() {
                 </div>
                 <div>
                   <div className="text-sm text-[#ffffff]/50">{t('contact.callUs')}</div>
-                  <div className="text-lg">+971-800-73282</div>
+                  <div className="text-lg" dir="ltr">+971-800-73282</div>
                 </div>
               </a>
 

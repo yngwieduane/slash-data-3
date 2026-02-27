@@ -1,10 +1,9 @@
 import { ArrowLeft, CreditCard, CheckCircle, TrendingUp, Users, Clock, AlertTriangle, Target, Zap, FileCheck, Award, Shield } from 'lucide-react';
 import { SEO } from '../SEO';
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react'; // or framer-motion if using elsewhere, wait I'll keep motion/react
 import { useNavigate } from 'react-router-dom';
 import digitalDirhamIcon from 'figma:asset/786686ac6ba0139ec64d1a9796d3c2d58619c02b.png';
 import { useTranslation } from 'react-i18next';
-
 // Custom Digital Dirham Icon Component
 const DigitalDirhamIcon = ({ className }: { className?: string }) => (
   <img src={digitalDirhamIcon} alt="Digital Dirham" className={className} width={24} height={24} />
@@ -130,7 +129,7 @@ export function SharyDetailPage() {
           className="flex items-center gap-2 text-[#00c7c5] hover:text-[#000000] transition-colors group"
         >
           <ArrowLeft size={20} className="group-hover:-translate-x-1 transition-transform rtl:group-hover:translate-x-1 rtl:rotate-180" />
-          <span>{t('solutionsPage.shary.moreInfo').replace(/^.*$/, 'Back to Solutions')}</span>
+          <span>{t('solutionsPage.shary.moreInfo', 'Back to Solutions')}</span>
         </button>
       </div>
 
