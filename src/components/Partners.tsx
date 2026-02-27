@@ -131,7 +131,7 @@ export function Partners() {
   };
 
   return (
-    <div id="partners" className="py-8 md:py-12 bg-[#ffffff]">
+    <div id="partners" className="py-8 md:py-12 bg-[#ffffff]" dir="ltr">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
@@ -226,8 +226,8 @@ export function Partners() {
                   key={index}
                   onClick={() => goToSlide(index)}
                   className={`transition-all duration-300 ${index === currentSlide
-                      ? 'w-8 h-3 bg-[#00c7c5] rounded-full'
-                      : 'w-3 h-3 bg-[#00c7c5]/30 rounded-full hover:bg-[#00c7c5]/50'
+                    ? 'w-8 h-3 bg-[#00c7c5] rounded-full'
+                    : 'w-3 h-3 bg-[#00c7c5]/30 rounded-full hover:bg-[#00c7c5]/50'
                     }`}
                   aria-label={`Go to partner slide ${index + 1}`}
                 />
