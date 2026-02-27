@@ -101,7 +101,7 @@ export function Footer({ onNavigate }: FooterProps) {
               </div>
               <div className="flex items-center gap-2">
                 <Phone size={16} className="text-[#00c7c5]" />
-                <span>+971-800-73282</span>
+                <span dir="ltr">+971-800-73282</span>
               </div>
             </div>
           </div>
