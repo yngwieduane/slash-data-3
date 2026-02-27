@@ -43,8 +43,8 @@ export function Footer({ onNavigate }: FooterProps) {
             <ul className="space-y-2 text-sm text-[#ffffff]/70">
               <li><a href="#about" className="hover:text-[#00c7c5] transition-colors" onClick={(e) => handleNavClick(e, 'about')}>{t('nav.aboutUs')}</a></li>
               <li><a href="#solutions" className="hover:text-[#00c7c5] transition-colors" onClick={(e) => handleNavClick(e, 'solutions')}>{t('nav.solutions')}</a></li>
-              <li><a href="#partners" className="hover:text-[#00c7c5] transition-colors" onClick={(e) => handleNavClick(e, 'partners')}>Partners</a></li>
-              <li><a href="#locations" className="hover:text-[#00c7c5] transition-colors" onClick={(e) => handleNavClick(e, 'locations')}>Locations</a></li>
+              <li><a href="#partners" className="hover:text-[#00c7c5] transition-colors" onClick={(e) => handleNavClick(e, 'partners')}>{t('nav.partners')}</a></li>
+              <li><a href="#locations" className="hover:text-[#00c7c5] transition-colors" onClick={(e) => handleNavClick(e, 'locations')}>{t('nav.locations')}</a></li>
             </ul>
           </div>
 
