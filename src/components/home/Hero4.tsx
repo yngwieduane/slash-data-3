@@ -169,7 +169,7 @@ export function Hero4({ onNavigateToSolutions }: Hero4Props) {
           >
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#000000] mb-6 leading-[1.1] tracking-tight">
               {t('hero.headlinePrefix')}
-              <span className="text-[#00c7c5] px-5">{t('hero.headlineHighlight')}</span>
+              <p className="text-[#00c7c5] px-2 inline-flex text-3xl sm:text-4xl md:text-5xl lg:text-6xl">{t('hero.headlineHighlight')}</p>
             </h1>
           </motion.div>
 
