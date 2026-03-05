@@ -130,7 +130,7 @@ export function WtheeqDetailPage() {
           className="flex items-center gap-2 text-[#00c7c5] hover:text-[#000000] transition-colors group"
         >
           <ArrowLeft size={20} className="group-hover:-translate-x-1 transition-transform rtl:group-hover:translate-x-1 rtl:rotate-180" />
-          <span>{t('solutionsPage.wtheeq.moreInfo').replace(/^.*$/, 'Back to Solutions')}</span>
+          <span>{t('nav.backToSolutions')}</span>
         </button>
       </div>
 
