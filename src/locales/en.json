@@ -61,7 +61,7 @@
                     "hero": {
                         "badge": "CASE STUDY",
                         "title": "SlashData's Role in Automating ICP's Health Insurance Verification Process",
-                        "description": "As part of a national digital transformation initiative with the Federal Authority for Identity, Citizenship, Customs and Port Security (ICP), SlashData delivered a federal-scale platform that automates health insurance verification across the UAE. The initiative directly supports the UAE's Zero Bureaucracy Vision by eliminating manual checks, paper-based submissions, and fragmented insurer validation processes."
+                        "description": "As part of a national digital transformation initiative with the Federal Authority for Identity, Citizenship, Customs and Port Security (ICP), SlashData delivered a federal-scale platform that automates health insurance verification across the UAE. The initiative directly supports the UAE's Zero Bureaucracy Vision by eliminating manual checks, paper-based submissions, and fragmented insurer validation processes"
                     },
                     "stats": {
                         "title": "Rabet by the Numbers",
@@ -105,8 +105,8 @@
                                 "title": "Absence of Real-Time Insurance Verification",
                                 "description": "Insurance validity could not be verified live against insurer systems at the time of submission.",
                                 "impacts": [
-                                    "15–25% of submitted insurance policies were inactive (expired, cancelled, or suspended) at submission time",
-                                    "Delayed detection led to reprocessing cycles of 3–7 business days",
+                                    "15-25% of submitted insurance policies were inactive (expired, cancelled, or suspended) at submission time",
+                                    "Delayed detection led to reprocessing cycles of 3-7 business days",
                                     "Increased downstream rejections and resubmissions"
                                 ]
                             },
